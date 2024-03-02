@@ -1,12 +1,12 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
   BlackHoleUtils.cpp
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(27,69): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(27,73): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(27,42): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(30,69): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(30,73): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(30,42): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(33,69): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(33,73): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(33,42): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(36,69): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(36,73): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(36,42): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
 C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13): message : al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"

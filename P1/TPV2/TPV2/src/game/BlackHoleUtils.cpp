@@ -17,23 +17,23 @@ BlackHoleUtils::~BlackHoleUtils()
 void BlackHoleUtils::create_black_hole(int n)
 {
 	for (int i = 0; i < n; ++i) {
-		int sign = rand_.nextInt(1, 4);
+		int sign = rand_.nextInt(1, 5);
 		int rnd = rand_.nextInt(100, 300);
 
 		Vector2D pos;
 		switch (sign)
 		{
 		case 1:
-			pos = Vector2D(sdlutils().width() / 2 - rnd, sdlutils().height() - rnd);
+			pos = Vector2D(sdlutils().width() / 2 - rnd, sdlutils().height() / 2 - rnd);
 			break;
 		case 2:
-			pos = Vector2D(sdlutils().width() / 2 + rnd, sdlutils().height() + rnd);
+			pos = Vector2D(sdlutils().width() / 2 + rnd, sdlutils().height() / 2 + rnd);
 			break;
 		case 3:
-			pos = Vector2D(sdlutils().width() / 2 - rnd, sdlutils().height() + rnd);
+			pos = Vector2D(sdlutils().width() / 2 - rnd, sdlutils().height() / 2 + rnd);
 			break;
 		case 4:
-			pos = Vector2D(sdlutils().width() / 2 + rnd, sdlutils().height() - rnd);
+			pos = Vector2D(sdlutils().width() / 2 + rnd, sdlutils().height() / 2 - rnd);
 			break;
 		default:
 			break;
