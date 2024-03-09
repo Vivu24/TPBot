@@ -92,6 +92,9 @@ void RunningState::checkCollisions() {
 	auto fighterTR = mngr->getComponent<Transform>(fighter);
 	auto fighterGUN = mngr->getComponent<Gun>(fighter);
 
+	auto &blackHoles = mngr->getEntities(ecs::grp::BLACK_HOLES);
+	auto num_of_blackHoles = blackHoles.size();
+
 	auto num_of_asteroids = asteroids.size();
 	for (auto i = 0u; i < num_of_asteroids; i++) {
 		auto a = asteroids[i];
@@ -127,6 +130,26 @@ void RunningState::checkCollisions() {
 						aTR->getRot())) {
 					ast_mngr_->split_astroid(a);
 					b.used = false;
+					sdlutils().soundEffects().at("explosion").play();
+					continue;
+				}
+			}
+		}
+
+		// asteriod with blackholes
+		for (ecs::grp::BLACK_HOLES bh : *fighterGUN) {
+			if (bh.used) {
+				if (Collisions::collidesWithRotation( //
+					bh.pos, //
+					bh.width, //
+					bh.height, //
+					bh.rot, //
+					aTR->getPos(), //
+					aTR->getWidth(), //
+					aTR->getHeight(), //
+					aTR->getRot())) {
+					ast_mngr_->split_astroid(a);
+					bh.used = false;
 					sdlutils().soundEffects().at("explosion").play();
 					continue;
 				}
