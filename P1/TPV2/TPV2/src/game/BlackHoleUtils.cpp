@@ -4,6 +4,7 @@
 #include "../components/Image.h"
 #include "../components/ShowAtOpossiteSide.h"
 #include "../components/Transform.h"
+#include "../components/RotationComponent.h"
 #include "../ecs/Manager.h"
 #include "../sdlutils/SDLUtils.h"
 #include "Game.h"
@@ -49,6 +50,7 @@ void BlackHoleUtils::create_black_hole(int n)
 		mngr->addComponent<ShowAtOpossiteSide>(a);
 		//mngr->addComponent<Generations>(a, g);
 		mngr->addComponent<Image>(a, &sdlutils().images().at("black-hole"));
+		mngr->addComponent<RotationComponent>(a, rotation);
 	}
 }
 

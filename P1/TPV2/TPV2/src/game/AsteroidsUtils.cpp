@@ -126,3 +126,13 @@ void AsteroidsUtils::split_astroid(ecs::entity_t a) {
 		}
 	}
 }
+
+void AsteroidsUtils::teleport_asteroid(ecs::entity_t a)
+{
+	auto mngr = Game::instance()->getMngr();
+	auto tr = mngr->getComponent<Transform>(a);
+
+	tr->getPos().set(
+		sdlutils().rand().nextInt(0, sdlutils().width()),
+		sdlutils().rand().nextInt(0, sdlutils().height()));
+}

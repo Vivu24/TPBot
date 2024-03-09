@@ -1,30 +1,30 @@
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\components\DeAcceleration.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\DeAcceleration.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\components\FighterCtrl.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\FighterCtrl.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\components\Follow.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Follow.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\components\Gun.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Gun.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\components\Health.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Health.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\components\Image.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Image.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\components\ImageWithFrames.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\ImageWithFrames.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\components\ShowAtOpossiteSide.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\ShowAtOpossiteSide.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\components\TowardsDestination.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\TowardsDestination.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\components\Transform.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Transform.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\ecs\Manager.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Manager.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\AsteroidsUtils.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\AsteroidsUtils.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\BlackHoleUtils.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\FighterUtils.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\FighterUtils.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\Game.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Game.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\GameOverState.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\GameOverState.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\NewGameState.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\NewGameState.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\NewRoundState.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\NewRoundState.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\PausedState.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\PausedState.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\game\RunningState.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\RunningState.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\json\JSON.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\JSON.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\json\JSONValue.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\JSONValue.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\json\json_demo.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\json_demo.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\main.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\main.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\sdlutils\SDLUtils.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\SDLUtils.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\sdlutils\sdlutils_demo.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\sdlutils_demo.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\sdlutils\SoundEffect.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\SoundEffect.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\sdlutils\Texture.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Texture.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\utils\Collisions.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Collisions.obj
-C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\src\utils\Vector2D.cpp;C:\Users\Javi\Desktop\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Vector2D.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\components\DeAcceleration.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\DeAcceleration.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\components\FighterCtrl.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\FighterCtrl.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\components\Follow.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Follow.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\components\Gun.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Gun.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\components\Health.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Health.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\components\Image.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Image.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\components\ImageWithFrames.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\ImageWithFrames.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\components\ShowAtOpossiteSide.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\ShowAtOpossiteSide.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\components\TowardsDestination.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\TowardsDestination.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\components\Transform.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Transform.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\ecs\Manager.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Manager.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\AsteroidsUtils.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\AsteroidsUtils.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\BlackHoleUtils.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\FighterUtils.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\FighterUtils.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\Game.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Game.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\GameOverState.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\GameOverState.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\NewGameState.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\NewGameState.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\NewRoundState.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\NewRoundState.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\PausedState.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\PausedState.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\RunningState.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\RunningState.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\json\JSON.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\JSON.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\json\JSONValue.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\JSONValue.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\json\json_demo.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\json_demo.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\main.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\main.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\sdlutils\SDLUtils.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\SDLUtils.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\sdlutils\sdlutils_demo.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\sdlutils_demo.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\sdlutils\SoundEffect.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\SoundEffect.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\sdlutils\Texture.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Texture.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\utils\Collisions.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Collisions.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\utils\Vector2D.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\x64\Debug\Vector2D.obj

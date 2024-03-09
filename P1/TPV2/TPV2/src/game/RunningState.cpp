@@ -136,27 +136,46 @@ void RunningState::checkCollisions() {
 			}
 		}
 
-		// asteriod with blackholes
-		for (ecs::grp::BLACK_HOLES bh : *fighterGUN) {
-			if (bh.used) {
-				if (Collisions::collidesWithRotation( //
-					bh.pos, //
-					bh.width, //
-					bh.height, //
-					bh.rot, //
-					aTR->getPos(), //
-					aTR->getWidth(), //
-					aTR->getHeight(), //
-					aTR->getRot())) {
-					ast_mngr_->split_astroid(a);
-					bh.used = false;
-					sdlutils().soundEffects().at("explosion").play();
-					continue;
-				}
+		// asteroid with blackholes
+		for (auto bh : blackHoles) {
+			auto bhTR = mngr->getComponent<Transform>(bh);
+			if (Collisions::collidesWithRotation( //
+				bhTR->getPos(), //
+				bhTR->getWidth(), //
+				bhTR->getHeight(), //
+				bhTR->getRot(),
+				aTR->getPos(), //
+				aTR->getWidth(), //
+				aTR->getHeight(), //
+				aTR->getRot())) {
+				ast_mngr_->teleport_asteroid(a);
+				continue;
 			}
 		}
-
 	}
+
+	for (auto i = 0u; i < num_of_blackHoles; i++) {
+		auto bh = blackHoles[i];
+		if (!mngr->isAlive(bh))
+			continue;
+
+		// blackhole with fighter
+		auto bhTR = mngr->getComponent<Transform>(bh);
+		if (Collisions::collidesWithRotation( //
+			fighterTR->getPos(), //
+			fighterTR->getWidth(), //
+			fighterTR->getHeight(), //
+			fighterTR->getRot(), //
+			bhTR->getPos(), //
+			bhTR->getWidth(), //
+			bhTR->getHeight(), //
+			bhTR->getRot())) {
+			onFigherDeath();
+			return;
+		}	
+	}
+
+	
 
 }
 
