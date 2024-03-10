@@ -16,7 +16,8 @@
 	GENERATIONS, \
 	HEALTH, \
 	GUN, \
-	IMAGEWITHFRAMES
+	IMAGEWITHFRAMES, \
+	ROTATIONCOMPONENT
 
 
 // Groups list - must have at least one element

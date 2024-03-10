@@ -6,6 +6,8 @@ class RotationComponent :
     public ecs::Component
 {
 public:
+    __CMPID_DECL__(ecs::cmp::ROTATIONCOMPONENT)
+
     RotationComponent(float rt);
     ~RotationComponent();
 
