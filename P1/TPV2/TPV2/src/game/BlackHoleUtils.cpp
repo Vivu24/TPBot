@@ -47,7 +47,7 @@ void BlackHoleUtils::create_black_hole(int n)
 		auto g = rand_.nextInt(1, 4);
 
 		mngr->addComponent<Transform>(a, pos, Vector2D(0, 0), 10 + 5 * g, 10 + 5 * g, 0.0f);
-		mngr->addComponent<ShowAtOpossiteSide>(a);
+		//mngr->addComponent<ShowAtOpossiteSide>(a);
 		//mngr->addComponent<Generations>(a, g);
 		mngr->addComponent<Image>(a, &sdlutils().images().at("black-hole"));
 		mngr->addComponent<RotationComponent>(a, rotation);

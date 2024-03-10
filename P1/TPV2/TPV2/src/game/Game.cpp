@@ -15,6 +15,7 @@
 #include "AsteroidsUtils.h"
 #include "FighterUtils.h"
 #include "BlackHoleUtils.h"
+#include "MissilesUtils.h"
 #include "GameOverState.h"
 #include "NewGameState.h"
 #include "NewRoundState.h"
@@ -49,13 +50,14 @@ void Game::init() {
 	AsteroidsFacade *ast_facede = new AsteroidsUtils();
 	FighterFacade *fighter_facede = new FighterUtils();
 	BlackHoleFacade* black_hole_facade = new BlackHoleUtils();
+	MissilesFacade* missiles_facade = new MissilesUtils();
 
 	fighter_facede->create_fighter();
 
 	paused_state_ = new PausedState();
-	runing_state_ = new RunningState(ast_facede, fighter_facede, black_hole_facade);
+	runing_state_ = new RunningState(ast_facede, fighter_facede, black_hole_facade, missiles_facade);
 	newgame_state_ = new NewGameState(fighter_facede);
-	newround_state_ = new NewRoundState(ast_facede, fighter_facede, black_hole_facade);
+	newround_state_ = new NewRoundState(ast_facede, fighter_facede, black_hole_facade, missiles_facade);
 	gameover_state_ = new GameOverState();
 
 	current_state_ = newgame_state_;
