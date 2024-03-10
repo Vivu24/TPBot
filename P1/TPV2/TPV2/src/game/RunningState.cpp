@@ -104,6 +104,9 @@ void RunningState::checkCollisions() {
 	auto &blackHoles = mngr->getEntities(ecs::grp::BLACK_HOLES);
 	auto num_of_blackHoles = blackHoles.size();
 
+	auto& missiles = mngr->getEntities(ecs::grp::MISSILES);
+	auto num_of_missiles = missiles.size();
+
 	auto num_of_asteroids = asteroids.size();
 	for (auto i = 0u; i < num_of_asteroids; i++) {
 		auto a = asteroids[i];
@@ -158,6 +161,23 @@ void RunningState::checkCollisions() {
 				aTR->getHeight(), //
 				aTR->getRot())) {
 				ast_mngr_->teleport_asteroid(a);
+				continue;
+			}
+		}
+
+		// asteroid with missiles
+		for (auto m : missiles) {
+			auto mTR = mngr->getComponent<Transform>(m);
+			if (Collisions::collidesWithRotation( //
+				mTR->getPos(), //
+				mTR->getWidth(), //
+				mTR->getHeight(), //
+				mTR->getRot(),
+				aTR->getPos(), //
+				aTR->getWidth(), //
+				aTR->getHeight(), //
+				aTR->getRot())) {
+				ast_mngr_->split_astroid(a);
 				continue;
 			}
 		}

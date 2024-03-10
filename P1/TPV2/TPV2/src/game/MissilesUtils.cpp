@@ -6,6 +6,7 @@
 #include "../ecs/Manager.h"
 #include "../sdlutils/SDLUtils.h"
 #include "../components/Follow.h"
+#include "../components/LookAt.h"
 #include "Game.h"
 
 MissilesUtils::MissilesUtils() : rand_(sdlutils().rand()), width_(sdlutils().width()), height_(sdlutils().height()) {};
@@ -13,8 +14,7 @@ MissilesUtils::MissilesUtils() : rand_(sdlutils().rand()), width_(sdlutils().wid
 MissilesUtils::~MissilesUtils() {};
 
 void MissilesUtils::create_missiles() {
-	//int rnd = rand_.nextInt(0, 4);
-	int rnd = 0;
+	int rnd = rand_.nextInt(0, 4);
 	Vector2D pos;
 
 	switch (rnd)
@@ -43,7 +43,7 @@ void MissilesUtils::create_missiles() {
 
 	mngr->addComponent<Transform>(a, pos, Vector2D(v, 0), 50, 50, 0.0f);
 	mngr->addComponent<Image>(a, &sdlutils().images().at("missile"));
-
+	mngr->addComponent<LookAt>(a);
 	auto fighter = mngr->getHandler(ecs::hdlr::FIGHTER);
 	auto fighterTR = mngr->getComponent<Transform>(fighter);
 	mngr->addComponent<Follow>(a, fighterTR->getPos());

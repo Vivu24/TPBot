@@ -17,7 +17,8 @@
 	HEALTH, \
 	GUN, \
 	IMAGEWITHFRAMES, \
-	ROTATIONCOMPONENT
+	ROTATIONCOMPONENT, \
+	LOOKAT
 
 
 // Groups list - must have at least one element
