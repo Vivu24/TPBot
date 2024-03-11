@@ -88,6 +88,13 @@ void RunningState::update() {
 		lastTimeGeneratedAsteroids_ = sdlutils().virtualTimer().currTime();
 	}
 
+	// Timer to instantiate a Missle every 15 seconds
+
+	if (sdlutils().virtualTimer().currTime() > lastTimeGeneratedMissile_ + 15000) {
+		m_mngr_->create_missiles();
+		lastTimeGeneratedMissile_ = sdlutils().virtualTimer().currTime();
+	}
+
 }
 
 void RunningState::enter() {
@@ -209,7 +216,7 @@ void RunningState::checkCollisions() {
 		if (!mngr->isAlive(m))
 			continue;
 
-		// blackhole with fighter
+		// missile with fighter
 		auto mTR = mngr->getComponent<Transform>(m);
 		if (Collisions::collidesWithRotation( //
 			fighterTR->getPos(), //
@@ -224,9 +231,6 @@ void RunningState::checkCollisions() {
 			return;
 		}
 	}
-
-	
-
 }
 
 void RunningState::onFigherDeath() {

@@ -1,13 +1,15 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
+  Game.cpp
   RunningState.cpp
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\RunningState.cpp(137,8): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\RunningState.cpp(136,8): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\RunningState.cpp(142,8): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\RunningState.cpp(141,8): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
 C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13): message : al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"
           with
           [
               T=SoundEffect
           ]
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\RunningState.cpp(145,52): message : vea la primera referencia a “SDLUtils::map_access_wrapper<SoundEffect>::at” en “RunningState::checkCollisions”
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\RunningState.cpp(150,52): message : vea la primera referencia a “SDLUtils::map_access_wrapper<SoundEffect>::at” en “RunningState::checkCollisions”
 C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\sdlutils\SDLUtils.h(201,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  Generando código...
   TPV2.vcxproj -> C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\bin\TPV2Debug.exe
