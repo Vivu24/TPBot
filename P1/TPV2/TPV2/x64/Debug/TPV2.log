@@ -1,4 +1,34 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
+  LookAt.cpp
+  RotationComponent.cpp
+  BlackHoleUtils.cpp
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(28,73): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(28,42): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(31,73): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(31,42): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(34,73): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(34,42): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(37,73): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(37,42): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13): message : al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"
+          with
+          [
+              T=Texture
+          ]
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(52,28): message : vea la primera referencia a “SDLUtils::map_access_wrapper<Texture>::at” en “BlackHoleUtils::create_black_hole”
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\sdlutils\SDLUtils.h(199,30): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<Texture>" que se está compilando
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\ecs\Manager.h(86,40): warning C4244: 'argumento': conversión de '_Ty' a 'float'; posible pérdida de datos
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\BlackHoleUtils.cpp(49,7): message : Vea la referencia a la creación de una instancia de la función plantilla "T *ecs::Manager::addComponent<Transform,Vector2D&,Vector2D,int,int,float>(ecs::entity_t,Vector2D &,Vector2D &&,int &&,int &&,float &&)" que se está compilando
+          with
+          [
+              T=Transform
+          ]
+  Game.cpp
   MissilesUtils.cpp
 C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\MissilesUtils.cpp(28,34): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\MissilesUtils.cpp(32,55): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
@@ -23,4 +53,5 @@ C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\TPV2\src\game\Missi
           [
               T=Transform
           ]
+  Generando código...
   TPV2.vcxproj -> C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P1\TPV2\bin\TPV2Debug.exe

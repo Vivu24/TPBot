@@ -9,7 +9,7 @@
 #include "../components/LookAt.h"
 #include "Game.h"
 
-MissilesUtils::MissilesUtils() : rand_(sdlutils().rand()), width_(sdlutils().width()), height_(sdlutils().height()) {};
+MissilesUtils::MissilesUtils() : rand_(sdlutils().rand()) {};
 
 MissilesUtils::~MissilesUtils() {};
 

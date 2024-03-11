@@ -2,10 +2,7 @@
 #include "../ecs/Manager.h"
 #include "Transform.h"
 
-RotationComponent::RotationComponent(float rt) 
-{
-	rotation = rt;
-}
+RotationComponent::RotationComponent(float rt) : tr_(), rotation(rt) {}
 
 RotationComponent::~RotationComponent() {
 }

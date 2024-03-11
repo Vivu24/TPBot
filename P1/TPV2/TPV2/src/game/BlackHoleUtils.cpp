@@ -9,7 +9,7 @@
 #include "../sdlutils/SDLUtils.h"
 #include "Game.h"
 
-BlackHoleUtils::BlackHoleUtils() : rand_(sdlutils().rand()) {}
+BlackHoleUtils::BlackHoleUtils() : rand_(sdlutils().rand()), rotation(5) {}
 
 BlackHoleUtils::~BlackHoleUtils()
 {

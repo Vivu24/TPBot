@@ -22,7 +22,8 @@ RunningState::RunningState(AsteroidsFacade *ast_mngr,
 		fighter_mngr_(fighter_mngr), //
 		bh_mngr_(bh_mngr), //
 		m_mngr_(m_mngr), //
-		lastTimeGeneratedAsteroids_() {
+		lastTimeGeneratedAsteroids_(), //
+		lastTimeGeneratedMissile_() {
 }
 
 RunningState::~RunningState() {

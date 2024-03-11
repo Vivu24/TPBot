@@ -2,7 +2,7 @@
 #include "../ecs/Manager.h"
 #include "Transform.h"
 
-LookAt::LookAt() {};
+LookAt::LookAt() : tr_(){};
 
 LookAt::~LookAt() {}
 

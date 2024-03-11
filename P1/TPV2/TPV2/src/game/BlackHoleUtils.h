@@ -16,6 +16,6 @@ public:
 
 private:
     RandomNumberGenerator& rand_;
-    float rotation = 5;
+    float rotation;
 };
 
