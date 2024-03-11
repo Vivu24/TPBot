@@ -99,6 +99,7 @@ void RunningState::update() {
 
 void RunningState::enter() {
 	lastTimeGeneratedAsteroids_ = sdlutils().virtualTimer().currTime();
+	lastTimeGeneratedMissile_ = sdlutils().virtualTimer().currTime();
 }
 
 void RunningState::checkCollisions() {
@@ -229,6 +230,25 @@ void RunningState::checkCollisions() {
 			mTR->getRot())) {
 			onFigherDeath();
 			return;
+		}
+
+		// missile with bullets
+		for (Gun::Bullet& b : *fighterGUN) {
+			if (b.used) {
+				if (Collisions::collidesWithRotation( //
+					b.pos, //
+					b.width, //
+					b.height, //
+					b.rot, //
+					mTR->getPos(), //
+					mTR->getWidth(), //
+					mTR->getHeight(), //
+					mTR->getRot())) {
+					mngr->setAlive(m, false);
+					b.used = false;
+					continue;
+				}
+			}
 		}
 	}
 }

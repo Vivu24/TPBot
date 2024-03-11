@@ -16,20 +16,25 @@ MissilesUtils::~MissilesUtils() {};
 void MissilesUtils::create_missiles() {
 	int rnd = rand_.nextInt(0, 4);
 	Vector2D pos;
+	float initRot;
 
 	switch (rnd)
 	{
 	case 0 :
 		pos = Vector2D(0, 0);
+		initRot = 135.0f;
 		break;
 	case 1:
 		pos = Vector2D(sdlutils().width(), 0);
+		initRot = 225.0f;
 		break;
 	case 2: 
 		pos = Vector2D(sdlutils().width(), sdlutils().height());
+		initRot = 315.0f;
 		break;
 	case 3:
 		pos = Vector2D(0, sdlutils().height());
+		initRot = 45.0f;
 		break;
 	default:
 		break;
@@ -41,7 +46,7 @@ void MissilesUtils::create_missiles() {
 
 	auto v = rand_.nextInt(1, 4);
 
-	mngr->addComponent<Transform>(a, pos, Vector2D(v, 0), 50, 50, 0.0f);
+	mngr->addComponent<Transform>(a, pos, Vector2D(v, 0), 50, 50, initRot);
 	mngr->addComponent<Image>(a, &sdlutils().images().at("missile"));
 	mngr->addComponent<LookAt>(a);
 	auto fighter = mngr->getHandler(ecs::hdlr::FIGHTER);
