@@ -204,6 +204,27 @@ void RunningState::checkCollisions() {
 		}	
 	}
 
+	for (auto i = 0u; i < num_of_missiles; i++) {
+		auto m = missiles[i];
+		if (!mngr->isAlive(m))
+			continue;
+
+		// blackhole with fighter
+		auto mTR = mngr->getComponent<Transform>(m);
+		if (Collisions::collidesWithRotation( //
+			fighterTR->getPos(), //
+			fighterTR->getWidth(), //
+			fighterTR->getHeight(), //
+			fighterTR->getRot(), //
+			mTR->getPos(), //
+			mTR->getWidth(), //
+			mTR->getHeight(), //
+			mTR->getRot())) {
+			onFigherDeath();
+			return;
+		}
+	}
+
 	
 
 }
