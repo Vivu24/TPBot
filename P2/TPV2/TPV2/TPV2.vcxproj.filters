@@ -49,6 +49,12 @@
     <Filter Include="Source Files\ecs">
       <UniqueIdentifier>{c92a6846-8e79-479a-b91b-b5d05690eda4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\systems">
+      <UniqueIdentifier>{4a0d8f13-4675-4850-9421-eaeddc22461a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\systems">
+      <UniqueIdentifier>{35be79bd-6b22-4958-bfbf-71fac7bb0996}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\json\JSONValue.h">
@@ -135,6 +141,9 @@
     <ClInclude Include="src\ecs\messages_defs.h">
       <Filter>Header Files\ecs</Filter>
     </ClInclude>
+    <ClInclude Include="src\systems\PacManSystem.h">
+      <Filter>Header Files\systems</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\json\JSONValue.cpp">
@@ -169,6 +178,9 @@
     </ClCompile>
     <ClCompile Include="src\ecs\Manager.cpp">
       <Filter>Source Files\ecs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\PacManSystem.cpp">
+      <Filter>Source Files\systems</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

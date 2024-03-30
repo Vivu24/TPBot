@@ -31,10 +31,10 @@
 // Systems list - must have at least one element
 //
 #define _SYS_LIST_ \
-    PACMANSYSTEM, \
+   /* PACMANSYSTEM, \
 	GHOSTSYSTEM, \
 	FOODSYSTEM, \
 	IMMUNITYSTSTEM, \
 	COLLISIONSSYSTEM, \
-	RENDERSYSTEM
+	RENDERSYSTEM*/
 

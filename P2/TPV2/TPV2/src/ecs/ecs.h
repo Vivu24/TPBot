@@ -80,7 +80,12 @@ namespace sys {
 // first number is 0 in C/C++ standard
 enum sysId : hdlrId_t {
 	_SYS_LIST_, /* taken from ../game/ecs_defs */
-
+	PACMANSYSTEM, \
+	GHOSTSYSTEM, \
+	FOODSYSTEM, \
+	IMMUNITYSTSTEM, \
+	COLLISIONSSYSTEM, \
+	RENDERSYSTEM, \
 	// do not remove this
 	_LAST_SYS_ID
 };
