@@ -1,14 +1,18 @@
 #pragma once
 #include "../ecs/System.h"
-#include "../ecs/ecs.h"
 
-class PacManSystem : public ecs::System
-{
+class Transform;
+class Image;
+
+class PacManSystem : public ecs::System {
 public:
-	constexpr static ecs::sysId_t id = ecs::sys::PACMANSYSTEM;
+	__SYSID_DECL__(ecs::sys::PACMANSYSTEM)
 
-	virtual ~PacManSystem(){}
-	virtual void update() {
+	PacManSystem();
+	virtual ~PacManSystem();
 
-	}
+	void initSystem() override;
+	void update() override;
+private:
+	Transform* pmTR_;
 };
