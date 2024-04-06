@@ -14,27 +14,28 @@
 //
 #define _CMPS_LIST_ \
 	TRANSFORM, \
-	IMAGE
+	IMAGE, \
+	IMAGEWITHFRAMES
 
 // Groups list - must have at least one element
 //
 #define _GRPS_LIST_ \
-	STAR, \
-	ASTEROID
+	FRUIT, \
+	GHOST
 
 // Handlers list - must have at least one element
 //
 #define _HDLRS_LIST_ \
     BALL, \
-	PADDLE
+	PACMAN
 
 // Systems list - must have at least one element
 //
 #define _SYS_LIST_ \
-   /* PACMANSYSTEM, \
+    PACMANSYSTEM, \
 	GHOSTSYSTEM, \
 	FOODSYSTEM, \
 	IMMUNITYSTSTEM, \
 	COLLISIONSSYSTEM, \
-	RENDERSYSTEM*/
+	RENDERSYSTEM
 

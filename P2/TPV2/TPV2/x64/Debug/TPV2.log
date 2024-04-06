@@ -1,17 +1,22 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
-  Manager.cpp
-  PacManSystem.cpp
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\components\Image.h(8,13): warning C4099: 'Image': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\components\Image.h(8,8): message : vea la declaración de 'Image'
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\components\Transform.h(8,17): warning C4099: 'Transform': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\components\Transform.h(8,8): message : vea la declaración de 'Transform'
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13): message : al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"
+  Game.cpp
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\ecs\ecs.h(98,30): error C2027: uso del tipo 'GhostSystem' sin definir
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\game\RunningState.h(6,7): message : vea la declaración de 'GhostSystem'
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\ecs\Manager.h(195,27): message : vea la referencia a la plantilla de variables 'const ecs::sysId_t sysId<GhostSystem>' que se está compilando
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\game\Game.cpp(45,19): message : Vea la referencia a la creación de una instancia de la función plantilla "T *ecs::Manager::addSystem<GhostSystem,>(void)" que se está compilando
           with
           [
-              T=Texture
+              T=GhostSystem
           ]
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\systems\PacManSystem.cpp(29,28): message : vea la primera referencia a “SDLUtils::map_access_wrapper<Texture>::at” en “PacManSystem::initSystem”
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\sdlutils\SDLUtils.h(199,30): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<Texture>" que se está compilando
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\ecs\ecs.h(98,30): error C2065: 'id': identificador no declarado
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\ecs\ecs.h(98,30): error C2131: la expresión no se evaluó como una constante
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\ecs\ecs.h(98,30): message : se encontró una (sub)expresión no constante
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\ecs\Manager.h(195,25): error C2131: la expresión no se evaluó como una constante
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\ecs\ecs.h(98,30): message : se encontró una (sub)expresión no constante
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\ecs\Manager.h(202,20): error C2027: uso del tipo 'GhostSystem' sin definir
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\game\RunningState.h(6,7): message : vea la declaración de 'GhostSystem'
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\ecs\Manager.h(208,10): error C2440: 'static_cast': no se puede realizar la conversión de 'ecs::System *' a 'GhostSystem *'
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\ecs\Manager.h(208,10): message : Los tipos señalados no están relacionados; la conversión requiere reinterpret_cast, conversión de estilo de C o conversión de estilo de función entre paréntesis
+  RunningState.cpp
+  Vector2D.cpp
   Generando código...
-  TPV2.vcxproj -> C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\bin\TPV2Debug.exe

@@ -4,22 +4,23 @@
 #include "../ecs/Component.h"
 
 class Texture;
+class Transform;
 
 struct Image: public ecs::Component {
 
 	__CMPID_DECL__(ecs::cmp::IMAGE)
 
-	Image() :
-			tex_() {
-	}
+	Image();
 
-	Image(Texture *tex) :
-			tex_(tex) {
-	}
+	Image(Texture* tex);
 
 	virtual ~Image() {
 	}
 
+	void render() override;
+	void initComponent() override;
+
+	Transform* tr_;
 	Texture *tex_;
 };
 

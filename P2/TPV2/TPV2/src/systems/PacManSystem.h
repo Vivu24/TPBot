@@ -2,7 +2,7 @@
 #include "../ecs/System.h"
 
 class Transform;
-class Image;
+class ImageWithFrames;
 
 class PacManSystem : public ecs::System {
 public:

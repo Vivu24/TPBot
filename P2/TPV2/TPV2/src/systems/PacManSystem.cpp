@@ -2,7 +2,7 @@
 
 #include "PacManSystem.h"
 
-#include "../components/Image.h"
+#include "../components/ImageWithFrames.h"
 #include "../components/Transform.h"
 #include "../ecs/Manager.h"
 #include "../sdlutils/InputHandler.h"
@@ -19,14 +19,19 @@ void PacManSystem::initSystem() {
 	// create the PacMan entity
 	//
 	auto pacman = mngr_->addEntity();
-	mngr_->setHandler(ecs::hdlr::PACMANHDLR, pacman);
+	mngr_->setHandler(ecs::hdlr::PACMAN, pacman);
 
 	pmTR_ = mngr_->addComponent<Transform>(pacman);
 	auto s = 50.0f;
 	auto x = (sdlutils().width() - s) / 2.0f;
 	auto y = (sdlutils().height() - s) / 2.0f;
 	pmTR_->init(Vector2D(x, y), Vector2D(), s, s, 0.0f);
-	mngr_->addComponent<Image>(pacman, &sdlutils().images().at("pacman"));
+	mngr_->addComponent<ImageWithFrames>(pacman, &sdlutils().images().at("pacman"), 
+		8, 8, 
+		0, 0, //
+		128, 128, //
+		0, 0, //
+		1, 4); 
 }
 
 void PacManSystem::update() {

@@ -9,8 +9,8 @@
 // components, groups, and handlers. See ecs_defs_example.h for an
 // example file
 //
-#if __has_include("../game/ecs_defs.h")
-#include "../game/ecs_defs.h"
+#if __has_include("../ecs/ecs_defs.h")
+#include "../ecs/ecs_defs.h"
 #else
 #define _CMPS_LIST_ _CMP_1
 #define _GRPS_LIST_ _GRP_2
@@ -45,9 +45,8 @@ namespace cmp {
 // list of component identifiers - note that we rely on that the
 // first number is 0 in C/C++ standard
 enum cmpId : cmpId_t {
+	DEFAULT,
 	_CMPS_LIST_, /* taken from ../game/ecs_defs */
-	TRANSFORM, \
-	IMAGE, \
 	// do not remove this
 	_LAST_CMP_ID
 };
@@ -70,7 +69,6 @@ namespace hdlr {
 // first number is 0 in C/C++ standard
 enum hdlrId : hdlrId_t {
 	_HDLRS_LIST_, /* taken from ../game/ecs_defs */
-	PACMANHDLR, \
 	// do not remove this
 	_LAST_HDLR_ID
 };
@@ -81,12 +79,6 @@ namespace sys {
 // first number is 0 in C/C++ standard
 enum sysId : hdlrId_t {
 	_SYS_LIST_, /* taken from ../game/ecs_defs */
-	PACMANSYSTEM, \
-	GHOSTSYSTEM, \
-	FOODSYSTEM, \
-	IMMUNITYSTSTEM, \
-	COLLISIONSSYSTEM, \
-	RENDERSYSTEM, \
 	// do not remove this
 	_LAST_SYS_ID
 };
