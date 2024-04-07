@@ -8,6 +8,7 @@
 //#include "../systems/CollisionsSystem.h"
 //#include "../systems/GameCtrlSystem.h"
 #include "../systems/PacManSystem.h"
+#include "../systems/GhostSystem.h"
 #include "../systems/RenderSystem.h"
 //#include "../systems/StarsSystem.h"
 #include "../utils/Vector2D.h"

@@ -47,6 +47,7 @@
     <ClInclude Include="src\sdlutils\SoundEffect.h" />
     <ClInclude Include="src\sdlutils\Texture.h" />
     <ClInclude Include="src\sdlutils\VirtualTimer.h" />
+    <ClInclude Include="src\systems\FoodSystem.h" />
     <ClInclude Include="src\systems\GhostSystem.h" />
     <ClInclude Include="src\systems\PacManSystem.h" />
     <ClInclude Include="src\systems\RenderSystem.h" />
@@ -73,6 +74,7 @@
     <ClCompile Include="src\sdlutils\sdlutils_demo.cpp" />
     <ClCompile Include="src\sdlutils\SoundEffect.cpp" />
     <ClCompile Include="src\sdlutils\Texture.cpp" />
+    <ClCompile Include="src\systems\FoodSystem.cpp" />
     <ClCompile Include="src\systems\GhostSystem.cpp" />
     <ClCompile Include="src\systems\PacManSystem.cpp" />
     <ClCompile Include="src\systems\RenderSystem.cpp" />
