@@ -12,5 +12,15 @@ public:
 
 	void initSystem() override;
 	void update() override;
+
+	void addGhost();
+
+private:
+	bool immunityActivated = false;
+
+	int ghostGenerationTime = 5000;
+	int lastGenerationTime = 0;
+
+	bool pacManImmunity = false;
 };
 

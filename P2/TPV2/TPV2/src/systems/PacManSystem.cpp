@@ -41,20 +41,20 @@ void PacManSystem::update() {
 	if (ihldr.keyDownEvent()) {
 
 		if (ihldr.isKeyDown(SDL_SCANCODE_RIGHT)) { // rotate right
-			pmTR_->rot_ = pmTR_->rot_ + 5.0f;
+			pmTR_->rot_ = pmTR_->rot_ + 90.0f;
 
 			// also rotate the PacMan so it looks in the same
 			// direction where it moves
 			//
-			pmTR_->vel_ = pmTR_->vel_.rotate(5.0f);
+			pmTR_->vel_ = pmTR_->vel_.rotate(90.0f);
 		}
 		else if (ihldr.isKeyDown(SDL_SCANCODE_LEFT)) { // rotate left
-			pmTR_->rot_ = pmTR_->rot_ - 5.0f;
+			pmTR_->rot_ = pmTR_->rot_ - 90.0f;
 
 			// also rotate the PacMan so it looks in the same
 			// direction where it moves
 			//
-			pmTR_->vel_ = pmTR_->vel_.rotate(-5.0f);
+			pmTR_->vel_ = pmTR_->vel_.rotate(-90.0f);
 		}
 		else if (ihldr.isKeyDown(SDL_SCANCODE_UP)) { // increase speed
 

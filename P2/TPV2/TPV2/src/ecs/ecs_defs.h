@@ -15,7 +15,8 @@
 #define _CMPS_LIST_ \
 	TRANSFORM, \
 	IMAGE, \
-	IMAGEWITHFRAMES
+	IMAGEWITHFRAMES, \
+	MIRACLEFRUIT
 
 // Groups list - must have at least one element
 //

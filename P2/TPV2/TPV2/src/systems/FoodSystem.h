@@ -12,5 +12,19 @@ public:
 
 	void initSystem() override;
 	void update() override;
+//    void receive(const Message& msg) override;
+
+private: 
+
+    void generateFruits();
+
+    void resetTimers();
+
+    void updateMiracleFruits();
+
+    void destroyFruits();
+
+	int nCol = 8;
+	int nFil = 6;
 };
 

@@ -1,5 +1,6 @@
 C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\components\Image.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\x64\Debug\Image.obj
 C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\components\ImageWithFrames.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\x64\Debug\ImageWithFrames.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\components\MiracleFruit.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\x64\Debug\MiracleFruit.obj
 C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\components\Transform.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\x64\Debug\Transform.obj
 C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\ecs\Manager.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\x64\Debug\Manager.obj
 C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\game\Game.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\x64\Debug\Game.obj
@@ -13,6 +14,8 @@ C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\sdlutils\S
 C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\sdlutils\sdlutils_demo.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\x64\Debug\sdlutils_demo.obj
 C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\sdlutils\SoundEffect.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\x64\Debug\SoundEffect.obj
 C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\sdlutils\Texture.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\x64\Debug\Texture.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\systems\CollisionSystem.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\x64\Debug\CollisionSystem.obj
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\systems\FoodSystem.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\x64\Debug\FoodSystem.obj
 C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\systems\GhostSystem.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\x64\Debug\GhostSystem.obj
 C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\systems\PacManSystem.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\x64\Debug\PacManSystem.obj
 C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\systems\RenderSystem.cpp;C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\x64\Debug\RenderSystem.obj

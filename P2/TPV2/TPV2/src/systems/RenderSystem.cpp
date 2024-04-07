@@ -33,5 +33,10 @@ void RenderSystem::update() {
 		auto image = mngr_->getComponent<ImageWithFrames>(g);
 		image->render();
 	}
+
+	for (auto f : mngr_->getEntities(ecs::grp::FRUIT)) {
+		auto image = mngr_->getComponent<ImageWithFrames>(f);
+		image->render();
+	}
 }
 

@@ -5,11 +5,12 @@
 #include "../ecs/Manager.h"
 #include "../sdlutils/InputHandler.h"
 #include "../sdlutils/SDLUtils.h"
-//#include "../systems/CollisionsSystem.h"
+#include "../systems/CollisionSystem.h"
 //#include "../systems/GameCtrlSystem.h"
 #include "../systems/PacManSystem.h"
 #include "../systems/GhostSystem.h"
 #include "../systems/RenderSystem.h"
+#include "../systems/FoodSystem.h"
 //#include "../systems/StarsSystem.h"
 #include "../utils/Vector2D.h"
 #include "../utils/Collisions.h"
@@ -44,11 +45,13 @@ void Game::init() {
 	// add the systems
 	pacmanSys_ = mngr_->addSystem<PacManSystem>();
 	ghostSys_ = mngr_->addSystem<GhostSystem>();
+	foodSys_ = mngr_->addSystem<FoodSystem>();
+	collisionSys_ = mngr_->addSystem<CollisionSystem>();
 	//gameCtrlSys_ = mngr_->addSystem<GameCtrlSystem>();
 	renderSys_ = mngr_->addSystem<RenderSystem>();
 	//collisionSys_ = mngr_->addSystem<CollisionsSystem>();
 
-	runing_state_ = new RunningState(pacmanSys_, ghostSys_);
+	runing_state_ = new RunningState(pacmanSys_, ghostSys_, foodSys_, collisionSys_);
 
 	current_state_ = runing_state_;
 	current_state_->onEnter();

@@ -11,6 +11,8 @@
 class PacManSystem;
 class RenderSystem;
 class GhostSystem;
+class FoodSystem;
+class CollisionSystem;
 
 class Game : public Singleton<Game>{
 	friend Singleton<Game>;
@@ -56,10 +58,11 @@ private:
 
 	PacManSystem *pacmanSys_;
 	GhostSystem *ghostSys_;
+	CollisionSystem* collisionSys_;
+	FoodSystem* foodSys_;
 	ecs::System *gameCtrlSys_;
 	ecs::System *startsSys_;
 	RenderSystem *renderSys_;
-	ecs::System *collisionSys_;
 
 	GameState* current_state_;
 	GameState* paused_state_;
