@@ -18,6 +18,9 @@ void GameCtrlSystem::recieve(const Message& msg)
 	case _m_NEW_GAME:
 		Game::instance()->setState(Game::State::NEWROUND);
 		break;
+	case _m_PAUSE:
+		Game::instance()->setState(Game::State::PAUSED);
+		break;
 	default:
 		break;
 	}

@@ -23,7 +23,8 @@ enum msgId : msgId_t {
 	_m_PACMAN_FOOD_COLLISION,
 	_m_PACMAN_GHOST_COLLISION,
 	_m_IMMUNITY_START,
-	_m_IMMUNITY_END
+	_m_IMMUNITY_END,
+	_m_PAUSE
 };
 
 
@@ -64,5 +65,11 @@ struct Message {
 			bool invulnerability;
 			ecs::entity_t entityToDelete;
 		} ghost_collision_data;
+
+		// _m_PAUSE
+		struct
+		{
+			// DATATATA
+		} pause_data;
 	};
 };

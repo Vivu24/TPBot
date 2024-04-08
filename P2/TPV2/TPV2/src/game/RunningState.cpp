@@ -10,6 +10,9 @@
 #include "../systems/ImmunitySystem.h"
 #include "../systems/RenderSystem.h"
 
+#include "../ecs/messages.h"
+#include "../sdlutils/InputHandler.h"
+
 RunningState::RunningState(PacManSystem* pc, GhostSystem* g, FoodSystem* f, CollisionSystem* c, ImmunitySystem* i, RenderSystem* r) : 
 	pcSystem_(pc), 
 	gSystem_(g), 
@@ -25,6 +28,16 @@ RunningState::~RunningState()
 
 void RunningState::update()
 {
+	auto& ihldr = ih();
+
+	if (ihldr.keyDownEvent()) {
+
+		if (ihldr.isKeyDown(SDL_SCANCODE_P))
+		{
+			Game::instance()->setState(Game::State::PAUSED);
+		}
+	}
+
 	pcSystem_->update();
 	gSystem_->update();
 	fSystem_->update();

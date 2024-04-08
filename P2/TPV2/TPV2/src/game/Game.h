@@ -16,6 +16,7 @@ class CollisionSystem;
 class GameCtrlSystem;
 class ImmunitySystem;
 class GameOverState;
+class PauseState;
 
 class Game : public Singleton<Game>{
 	friend Singleton<Game>;

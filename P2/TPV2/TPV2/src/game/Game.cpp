@@ -19,6 +19,7 @@
 #include "NewRoundState.h"
 #include "NewGameState.h"
 #include "GameOverState.h"
+#include "PauseState.h"
 
 using ecs::Manager;
 
@@ -38,6 +39,7 @@ Game::~Game() {
 	delete newround_state_;
 	delete newgame_state_;
 	delete gameover_state_;
+	delete paused_state_;
 }
 
 void Game::init() {
@@ -62,6 +64,7 @@ void Game::init() {
 	newround_state_ = new NewRoundState();
 	newgame_state_ = new NewGameState();
 	gameover_state_ = new GameOverState();
+	paused_state_ = new PauseState();
 
 	current_state_ = newgame_state_;
 	current_state_->onEnter();
