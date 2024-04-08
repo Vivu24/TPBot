@@ -2,7 +2,10 @@
 
 #include "../components/Transform.h"
 #include "../ecs/Manager.h"
+#include "../ecs/Entity.h"
 #include "../utils/Collisions.h"
+//#include "../ecs/messages.h"
+//#include "../ecs/messages_defs.h"
 
 CollisionSystem::CollisionSystem()
 {
@@ -37,6 +40,13 @@ void CollisionSystem::checkCollisions()
 		auto fTR = mngr_->getComponent<Transform>(fruits[i]);
 		if (Collisions::collides(pmTR->getPos(), pmTR->getWidth(), pmTR->getHeight(), fTR->getPos(), fTR->getWidth(), fTR->getHeight())) {
 			std::cout << "col f";
+
+			Message msg;
+			msg.id = _m_PACMAN_FOOD_COLLISION;
+			msg.fruit_collision_data.isMilagrosa = false; 
+			msg.fruit_collision_data.fruitToDelete = fruits[i];
+			//tododododo
+			mngr_->send(msg);
 		}
 	}
 
@@ -46,6 +56,7 @@ void CollisionSystem::checkCollisions()
 		auto gTR = mngr_->getComponent<Transform>(ghosts[i]);
 		if (Collisions::collides(pmTR->getPos(), pmTR->getWidth(), pmTR->getHeight(), gTR->getPos(), gTR->getWidth(), gTR->getHeight())) {
 			std::cout << "col g";
+
 		}
 	}
 }

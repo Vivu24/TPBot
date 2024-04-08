@@ -1,12 +1,14 @@
 #include "FoodSystem.h"
 #include "../sdlutils/SDLUtils.h"
 #include "../ecs/Manager.h"
+#include "../ecs/Entity.h"
 
 #include "../components/Transform.h"
 #include "../components/Image.h"
 #include "../components/MiracleFruit.h"
 #include "../game/Game.h"
 #include "../components/ImageWithFrames.h"
+//#include "../ecs/messages.h"
 
 FoodSystem::FoodSystem()
 {	
@@ -27,9 +29,16 @@ void FoodSystem::update()
 	updateMiracleFruits();
 }
 
-//void FoodSystem::receive(const Message& msg)
-//{
-//}
+void FoodSystem::recieve(const Message& msg)
+{
+	switch (msg.id) 
+	{
+	case _m_PACMAN_FOOD_COLLISION:
+		mngr_->setAlive(msg.fruit_collision_data.fruitToDelete, false);
+		break;
+
+	}
+}
 
 void FoodSystem::generateFruits()
 {

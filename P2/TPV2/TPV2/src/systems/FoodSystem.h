@@ -12,7 +12,7 @@ public:
 
 	void initSystem() override;
 	void update() override;
-//    void receive(const Message& msg) override;
+	void recieve(const Message& msg) override;
 
 private: 
 

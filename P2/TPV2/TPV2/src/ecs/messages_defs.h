@@ -12,6 +12,7 @@
 
 #include <cstdint>
 #include "../ecs/ecs.h"
+#include "Entity.h"
 
 using msgId_t = uint8_t;
 enum msgId : msgId_t {
@@ -50,6 +51,13 @@ struct Message {
 		{
 			// DATATATATATA
 		} new_game_data;
+
+		// _m_PACMAN_FOOD_COLLISION
+		struct
+		{
+			bool isMilagrosa;
+			ecs::entity_t fruitToDelete;
+		} fruit_collision_data;
 
 	};
 };
