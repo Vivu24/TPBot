@@ -59,5 +59,10 @@ struct Message {
 			ecs::entity_t fruitToDelete;
 		} fruit_collision_data;
 
+		// _m_PACMAN_GHOST_COLLISION
+		struct {
+			bool invulnerability;
+			ecs::entity_t entityToDelete;
+		} ghost_collision_data;
 	};
 };

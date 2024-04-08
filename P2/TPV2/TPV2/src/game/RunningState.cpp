@@ -7,8 +7,17 @@
 #include "../systems/GhostSystem.h"
 #include "../systems/FoodSystem.h"
 #include "../systems/CollisionSystem.h"
+#include "../systems/ImmunitySystem.h"
+#include "../systems/RenderSystem.h"
 
-RunningState::RunningState(PacManSystem* pc, GhostSystem* g, FoodSystem* f, CollisionSystem* c) : pcSystem_(pc), gSystem_(g), fSystem_(f), cSystem_(c) {}
+RunningState::RunningState(PacManSystem* pc, GhostSystem* g, FoodSystem* f, CollisionSystem* c, ImmunitySystem* i, RenderSystem* r) : 
+	pcSystem_(pc), 
+	gSystem_(g), 
+	fSystem_(f), 
+	cSystem_(c), 
+	iSystem_(i),
+	rSystem_(r)
+{}
 
 RunningState::~RunningState()
 {
@@ -16,13 +25,12 @@ RunningState::~RunningState()
 
 void RunningState::update()
 {
-	auto mngr = Game::
-		instance()->getMngr();
-
 	pcSystem_->update();
 	gSystem_->update();
 	fSystem_->update();
 	cSystem_->update();
+	iSystem_->update();
+	rSystem_->update();
 }
 
 void RunningState::onEnter()

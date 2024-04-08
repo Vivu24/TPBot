@@ -18,10 +18,6 @@ private:
 
     void generateFruits();
 
-    void resetTimers();
-
-    void updateMiracleFruits();
-
     void destroyFruits();
 
 	int nCol = 8;

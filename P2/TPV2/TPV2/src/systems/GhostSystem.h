@@ -12,15 +12,14 @@ public:
 
 	void initSystem() override;
 	void update() override;
-
-	void addGhost();
+	void recieve(const Message&) override;
 
 private:
-	bool immunityActivated = false;
+	void setVulnerable(bool);
+	void deleteGhosts();
+	void addGhost();
 
-	int ghostGenerationTime = 5000;
-	int lastGenerationTime = 0;
-
-	bool pacManImmunity = false;
+	int ghostGenerationTime;
+	int lastGenerationTime;
 };
 

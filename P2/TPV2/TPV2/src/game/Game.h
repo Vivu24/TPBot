@@ -13,6 +13,9 @@ class RenderSystem;
 class GhostSystem;
 class FoodSystem;
 class CollisionSystem;
+class GameCtrlSystem;
+class ImmunitySystem;
+class GameOverState;
 
 class Game : public Singleton<Game>{
 	friend Singleton<Game>;
@@ -60,8 +63,8 @@ private:
 	GhostSystem *ghostSys_;
 	CollisionSystem* collisionSys_;
 	FoodSystem* foodSys_;
-	ecs::System *gameCtrlSys_;
-	ecs::System *startsSys_;
+	GameCtrlSystem *gameCtrlSys_;
+	ImmunitySystem *immunitySys_;
 	RenderSystem *renderSys_;
 
 	GameState* current_state_;

@@ -13,6 +13,10 @@ public:
 
 	void initSystem() override;
 	void update() override;
+	void recieve(const Message&) override;
+
 private:
+	void resetPacMan();
+
 	Transform* pmTR_;
 };

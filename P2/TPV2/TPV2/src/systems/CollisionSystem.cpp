@@ -4,8 +4,8 @@
 #include "../ecs/Manager.h"
 #include "../ecs/Entity.h"
 #include "../utils/Collisions.h"
-//#include "../ecs/messages.h"
-//#include "../ecs/messages_defs.h"
+#include "../systems/ImmunitySystem.h"
+#include "../components/MiracleFruit.h"
 
 CollisionSystem::CollisionSystem()
 {
@@ -39,11 +39,12 @@ void CollisionSystem::checkCollisions()
 	for (int i = 0; i < fruits.size(); i++) {
 		auto fTR = mngr_->getComponent<Transform>(fruits[i]);
 		if (Collisions::collides(pmTR->getPos(), pmTR->getWidth(), pmTR->getHeight(), fTR->getPos(), fTR->getWidth(), fTR->getHeight())) {
-			std::cout << "col f";
+			//std::cout << "col f";
 
 			Message msg;
 			msg.id = _m_PACMAN_FOOD_COLLISION;
-			msg.fruit_collision_data.isMilagrosa = false; 
+			if(mngr_->getComponent<MiracleFruit>(fruits[i]) != nullptr)
+				msg.fruit_collision_data.isMilagrosa = mngr_->getComponent<MiracleFruit>(fruits[i])->isMiracle();
 			msg.fruit_collision_data.fruitToDelete = fruits[i];
 			//tododododo
 			mngr_->send(msg);
@@ -55,8 +56,13 @@ void CollisionSystem::checkCollisions()
 	for (int i = 0; i < ghosts.size(); i++) {
 		auto gTR = mngr_->getComponent<Transform>(ghosts[i]);
 		if (Collisions::collides(pmTR->getPos(), pmTR->getWidth(), pmTR->getHeight(), gTR->getPos(), gTR->getWidth(), gTR->getHeight())) {
-			std::cout << "col g";
+			//std::cout << "col g";
 
+			Message msg;
+			msg.id = _m_PACMAN_GHOST_COLLISION;
+			msg.ghost_collision_data.invulnerability = mngr_->getSystem<ImmunitySystem>()->getInv();
+			msg.ghost_collision_data.entityToDelete = ghosts[i];
+			mngr_->send(msg);
 		}
 	}
 }

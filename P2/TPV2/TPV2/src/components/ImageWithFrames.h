@@ -19,6 +19,7 @@ public:
 	void initComponent() override;
 	void render() override;
 
+	void setImage(int scol, int srow, int ncol, int nrow);
 private:
 	Texture *tex_;
 	Transform *tr_;

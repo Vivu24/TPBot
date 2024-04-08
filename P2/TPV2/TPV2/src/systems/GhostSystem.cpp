@@ -6,8 +6,11 @@
 #include "../sdlutils/InputHandler.h"
 #include "../sdlutils/SDLUtils.h"
 #include "../ecs/Entity.h"
+#include "ImmunitySystem.h"
 
-GhostSystem::GhostSystem()
+GhostSystem::GhostSystem() :
+	lastGenerationTime(0),
+	ghostGenerationTime(5000)
 {
 }
 
@@ -23,7 +26,7 @@ void GhostSystem::initSystem()
 void GhostSystem::update()
 {
 	if (lastGenerationTime + ghostGenerationTime < sdlutils().virtualTimer().currTime() && 
-		!(pacManImmunity || mngr_->getEntities(ecs::grp::GHOST).size() >= 10)) {
+		!(mngr_->getSystem<ImmunitySystem>()->getInv() || mngr_->getEntities(ecs::grp::GHOST).size() >= 10)) {
 
 		lastGenerationTime = sdlutils().virtualTimer().currTime();
 
@@ -45,6 +48,32 @@ void GhostSystem::update()
 
 		tf->pos_ = tf->pos_ + tf->vel_;
 
+	}
+}
+
+void GhostSystem::recieve(const Message& msg)
+{
+	switch (msg.id)
+	{
+	case _m_PACMAN_GHOST_COLLISION:
+		if (msg.ghost_collision_data.invulnerability)
+			mngr_->setAlive(msg.ghost_collision_data.entityToDelete, false);
+		break;
+	case _m_IMMUNITY_START:
+		setVulnerable(true);
+		break;
+	case _m_IMMUNITY_END:
+		setVulnerable(false);
+		break;
+	case _m_ROUND_START:
+		lastGenerationTime = sdlutils().virtualTimer().currTime();
+		break;
+	case _m_ROUND_OVER:
+	case _m_GAME_OVER:
+		deleteGhosts();
+		break;
+	default:
+		break;
 	}
 }
 
@@ -78,4 +107,28 @@ void GhostSystem::addGhost()
 		128, 128, //
 		4, 0, //
 		1, 8);
+}
+
+void GhostSystem::deleteGhosts()
+{
+	for (auto& e : mngr_->getEntities(ecs::grp::GHOST))
+		mngr_->setAlive(e, false);
+}
+
+void GhostSystem::setVulnerable(bool v)
+{
+	switch (v)
+	{
+	case true:
+		for (auto& e : mngr_->getEntities(ecs::grp::GHOST)) {
+			mngr_->getComponent<ImageWithFrames>(e)->setImage(6, 3, 2, 1);
+		}
+		break;
+	case false:
+		for (auto& e : mngr_->getEntities(ecs::grp::GHOST)) {
+			mngr_->getComponent<ImageWithFrames>(e)->setImage(0, 4, 8, 1);
+		}
+	default:
+		break;
+	}
 }

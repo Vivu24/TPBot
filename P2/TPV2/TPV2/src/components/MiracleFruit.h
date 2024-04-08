@@ -3,13 +3,14 @@
 
 #include <string>
 
+class ImageWithFrames;
 
 class MiracleFruit
     :public ecs::Component
 {
 public:
 
-    __CMPID_DECL__(ecs::cmp::MIRACLEFRUIT);
+    __CMPID_DECL__(ecs::cmp::MIRACLEFRUIT)
 
     MiracleFruit();
     ~MiracleFruit();
@@ -20,16 +21,19 @@ public:
 
     void initComponent() override;
 
+    bool isMiracle() { return miracleActivated_; }
+
     void resetTimer();
 
+private:
     void startMiracle();
 
-    bool miracleActivated = false;
+    bool miracleActivated_;
 
-    int miracleCooldown;
-    int miracleDuration;
-    int initialTime;
+    int miracleCooldown_;
+    int miracleDuration_;
+    int initialTime_;
 
-
+    ImageWithFrames* image_;
 
 };

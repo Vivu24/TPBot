@@ -6,16 +6,19 @@
 #include "../sdlutils/InputHandler.h"
 #include "../sdlutils/SDLUtils.h"
 #include "../systems/CollisionSystem.h"
-//#include "../systems/GameCtrlSystem.h"
+#include "../systems/GameCtrlSystem.h"
 #include "../systems/PacManSystem.h"
 #include "../systems/GhostSystem.h"
 #include "../systems/RenderSystem.h"
 #include "../systems/FoodSystem.h"
-//#include "../systems/StarsSystem.h"
 #include "../utils/Vector2D.h"
 #include "../utils/Collisions.h"
+#include "../systems/ImmunitySystem.h"
 
 #include "RunningState.h"
+#include "NewRoundState.h"
+#include "NewGameState.h"
+#include "GameOverState.h"
 
 using ecs::Manager;
 
@@ -23,7 +26,7 @@ Game::Game() :
 		mngr_(), //
 		pacmanSys_(), //
 		gameCtrlSys_(), //
-		startsSys_(), //
+		immunitySys_(), //
 		renderSys_(), //
 		collisionSys_() {
 
@@ -31,6 +34,10 @@ Game::Game() :
 
 Game::~Game() {
 	delete mngr_;
+	delete runing_state_;
+	delete newround_state_;
+	delete newgame_state_;
+	delete gameover_state_;
 }
 
 void Game::init() {
@@ -47,13 +54,16 @@ void Game::init() {
 	ghostSys_ = mngr_->addSystem<GhostSystem>();
 	foodSys_ = mngr_->addSystem<FoodSystem>();
 	collisionSys_ = mngr_->addSystem<CollisionSystem>();
-	//gameCtrlSys_ = mngr_->addSystem<GameCtrlSystem>();
+	gameCtrlSys_ = mngr_->addSystem<GameCtrlSystem>();
 	renderSys_ = mngr_->addSystem<RenderSystem>();
-	//collisionSys_ = mngr_->addSystem<CollisionsSystem>();
+	immunitySys_ = mngr_->addSystem<ImmunitySystem>();
 
-	runing_state_ = new RunningState(pacmanSys_, ghostSys_, foodSys_, collisionSys_);
+	runing_state_ = new RunningState(pacmanSys_, ghostSys_, foodSys_, collisionSys_, immunitySys_, renderSys_);
+	newround_state_ = new NewRoundState();
+	newgame_state_ = new NewGameState();
+	gameover_state_ = new GameOverState();
 
-	current_state_ = runing_state_;
+	current_state_ = newgame_state_;
 	current_state_->onEnter();
 }
 
@@ -67,6 +77,8 @@ void Game::start() {
 	while (!exit) {
 		Uint32 startTime = sdlutils().currRealTime();
 
+		sdlutils().clearRenderer();
+
 		// refresh the input handler
 		ihdlr.refresh();
 
@@ -77,15 +89,9 @@ void Game::start() {
 
 		current_state_->update();
 
-		/*startsSys_->update();
-		gameCtrlSys_->update();
-		collisionSys_->update();*/
+		sdlutils().presentRenderer();
 
 		mngr_->refresh();
-
-		sdlutils().clearRenderer();
-		renderSys_->update();
-		sdlutils().presentRenderer();
 
 		Uint32 frameTime = sdlutils().currRealTime() - startTime;
 

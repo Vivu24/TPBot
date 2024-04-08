@@ -7,6 +7,7 @@
 #include "../ecs/Manager.h"
 #include "../sdlutils/InputHandler.h"
 #include "../sdlutils/SDLUtils.h"
+#include "../components/HealthComponent.h"
 
 PacManSystem::PacManSystem() :
 	pmTR_(nullptr) {
@@ -21,11 +22,8 @@ void PacManSystem::initSystem() {
 	auto pacman = mngr_->addEntity();
 	mngr_->setHandler(ecs::hdlr::PACMAN, pacman);
 
+	mngr_->addComponent<HealthComponent>(pacman, &sdlutils().images().at("heart"));
 	pmTR_ = mngr_->addComponent<Transform>(pacman);
-	auto s = 50.0f;
-	auto x = (sdlutils().width() - s) / 2.0f;
-	auto y = (sdlutils().height() - s) / 2.0f;
-	pmTR_->init(Vector2D(x, y), Vector2D(), s, s, 0.0f);
 	mngr_->addComponent<ImageWithFrames>(pacman, &sdlutils().images().at("pacman"), 
 		8, 8, 
 		0, 0, //
@@ -107,4 +105,36 @@ void PacManSystem::update() {
 		pmTR_->vel_.set(0.0f, 0.0f);
 	}
 
+}
+
+void PacManSystem::recieve(const Message& msg)
+{
+	auto health = mngr_->getComponent<HealthComponent>(mngr_->getHandler(ecs::hdlr::PACMAN));
+	switch (msg.id)
+	{
+	case _m_PACMAN_GHOST_COLLISION:
+		if (health->getLifes() <= 0) {
+			Message msg;
+			msg.id = _m_GAME_OVER;
+			mngr_->send(msg);
+		}
+		else if (!msg.ghost_collision_data.invulnerability) {
+			health->setLifes(health->getLifes() - 1);
+			Message msg;
+			msg.id = _m_ROUND_OVER;
+			mngr_->send(msg);
+		}
+	case _m_ROUND_START:
+		resetPacMan();
+	default:
+		break;
+	}
+}
+
+void PacManSystem::resetPacMan()
+{
+	auto s = 50.0f;
+	auto x = (sdlutils().width() - s) / 2.0f;
+	auto y = (sdlutils().height() - s) / 2.0f;
+	pmTR_->init(Vector2D(x, y), Vector2D(), s, s, 0.0f);
 }

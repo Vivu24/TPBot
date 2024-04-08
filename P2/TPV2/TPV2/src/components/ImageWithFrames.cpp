@@ -53,3 +53,11 @@ void ImageWithFrames::render() {
 	tex_->render(src, dest, tr_->getRot());
 
 }
+
+void ImageWithFrames::setImage(int scol, int srow, int ncol, int nrow)
+{
+	scol_ = scol;
+	srow_ = srow;
+	ncol_ = ncol;
+	nrow_ = nrow;
+}

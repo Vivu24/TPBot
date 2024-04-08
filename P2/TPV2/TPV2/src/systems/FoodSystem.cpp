@@ -8,7 +8,7 @@
 #include "../components/MiracleFruit.h"
 #include "../game/Game.h"
 #include "../components/ImageWithFrames.h"
-//#include "../ecs/messages.h"
+#include "ImmunitySystem.h"
 
 FoodSystem::FoodSystem()
 {	
@@ -20,13 +20,23 @@ FoodSystem::~FoodSystem()
 
 void FoodSystem::initSystem()
 {
-	std::cout << "food";
-	generateFruits();
 }
 
 void FoodSystem::update()
 {
-	updateMiracleFruits();
+	std::vector<ecs::entity_t> fruits = mngr_->getEntities(ecs::grp::FRUIT);
+
+	if (fruits.size() <= 0) {
+		Message msg;
+		msg.id = _m_GAME_OVER;
+		mngr_->send(msg);
+	}
+
+	for (auto& e : fruits) {
+		if (mngr_->hasComponent<MiracleFruit>(e)) {
+			mngr_->getComponent<MiracleFruit>(e)->update();
+		}
+	}
 }
 
 void FoodSystem::recieve(const Message& msg)
@@ -35,8 +45,27 @@ void FoodSystem::recieve(const Message& msg)
 	{
 	case _m_PACMAN_FOOD_COLLISION:
 		mngr_->setAlive(msg.fruit_collision_data.fruitToDelete, false);
-		break;
 
+		if (msg.fruit_collision_data.isMilagrosa && !mngr_->getSystem<ImmunitySystem>()->getInv()) {
+			Message msg;
+			msg.id = _m_IMMUNITY_START;
+			mngr_->send(msg);
+		}
+		break;
+	case _m_ROUND_START:
+		for (auto& e : mngr_->getEntities(ecs::grp::FRUIT)) {
+			if(mngr_->hasComponent<MiracleFruit>(e))
+				mngr_->getComponent<MiracleFruit>(e)->resetTimer();
+		}
+		break;
+	case _m_GAME_OVER:
+		destroyFruits();
+		break;
+	case _m_NEW_GAME:
+		generateFruits();
+		break;
+	default:
+		break;
 	}
 }
 
@@ -68,56 +97,8 @@ void FoodSystem::generateFruits()
 
 			int random = sdlutils().rand().nextInt(0, 1000);
 
-			if (random < 100) {
-
+			if (random <= 100) {
 				mngr_->addComponent<MiracleFruit>(fruit);
-
-			}
-		}
-	}
-}
-
-void FoodSystem::resetTimers()
-{
-	for (auto& e : mngr_->getEntities(ecs::grp::FRUIT)) {
-
-		auto miracleCmp = mngr_->getComponent<MiracleFruit>(e);
-		auto img = mngr_->getComponent<ImageWithFrames>(e);
-
-		if (miracleCmp != nullptr) {
-
-			miracleCmp->resetTimer();
-			// Sprite Normal
-
-		}
-
-
-	}
-}
-
-void FoodSystem::updateMiracleFruits()
-{
-	for (auto& e : mngr_->getEntities(ecs::grp::FRUIT)) {
-
-		auto miracleCmp = mngr_->getComponent<MiracleFruit>(e);
-		auto img = mngr_->getComponent<Image>(e);
-
-		if (miracleCmp != nullptr) {
-
-
-			if (miracleCmp->miracleActivated) {
-				if (miracleCmp->initialTime + miracleCmp->miracleDuration < sdlutils().virtualTimer().currTime()) {
-					miracleCmp->resetTimer();
-					// Añadir Imagen fruta normal;
-				}
-			}
-			else {
-
-				if (miracleCmp->initialTime + miracleCmp->miracleCooldown < sdlutils().virtualTimer().currTime()) {
-					miracleCmp->startMiracle();
-					// Añadir Imagen fruta miracle
-
-				}
 			}
 		}
 	}
@@ -125,7 +106,6 @@ void FoodSystem::updateMiracleFruits()
 
 void FoodSystem::destroyFruits()
 {
-
 	for (auto& e : mngr_->getEntities(ecs::grp::FRUIT)) {
 		mngr_->setAlive(e, false);
 	}
