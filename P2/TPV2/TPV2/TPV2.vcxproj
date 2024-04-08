@@ -27,14 +27,14 @@
     <ClInclude Include="src\components\Transform.h" />
     <ClInclude Include="src\ecs\Component.h" />
     <ClInclude Include="src\ecs\ecs.h" />
-    <ClInclude Include="src\ecs\ecs_defs.h" />
     <ClInclude Include="src\ecs\Entity.h" />
     <ClInclude Include="src\ecs\Manager.h" />
     <ClInclude Include="src\ecs\messages.h" />
-    <ClInclude Include="src\ecs\messages_defs.h" />
     <ClInclude Include="src\ecs\System.h" />
+    <ClInclude Include="src\game\ecs_defs.h" />
     <ClInclude Include="src\game\Game.h" />
     <ClInclude Include="src\game\GameOverState.h" />
+    <ClInclude Include="src\game\messages_defs.h" />
     <ClInclude Include="src\game\NewGameState.h" />
     <ClInclude Include="src\game\NewRoundState.h" />
     <ClInclude Include="src\game\PauseState.h" />

@@ -31,10 +31,11 @@ void RunningState::update()
 	auto& ihldr = ih();
 
 	if (ihldr.keyDownEvent()) {
-
 		if (ihldr.isKeyDown(SDL_SCANCODE_P))
 		{
-			Game::instance()->setState(Game::State::PAUSED);
+			Message msg;
+			msg.id = _m_PAUSE;
+			Game::instance()->getMngr()->send(msg);
 		}
 	}
 

@@ -56,9 +56,8 @@ void PacManSystem::update() {
 		}
 		else if (ihldr.isKeyDown(SDL_SCANCODE_UP)) { // increase speed
 
-			// add 1.0f to the speed (respecting the limit 3.0f). Recall
-			// that speed is the length of the velocity vector
-			float speed = std::min(3.0f, pmTR_->vel_.magnitude() + 1.0f);
+			// speed
+			float speed = 2.0f;
 
 			// change the length of velocity vecto to 'speed'. We need
 			// '.rotate(rot)' for the case in which the current speed is
@@ -68,9 +67,8 @@ void PacManSystem::update() {
 			pmTR_->vel_ = Vector2D(0, -speed).rotate(pmTR_->rot_);
 		}
 		else if (ihldr.isKeyDown(SDL_SCANCODE_DOWN)) { // decrease speed
-			// subtract 1.0f to the speed (respecting the limit 0.0f). Recall
-			// that speed is the length of the velocity vector
-			float speed = std::max(0.0f, pmTR_->vel_.magnitude() - 1.0f);
+			// speed
+			float speed = 0;
 
 			// change the length of velocity vector to 'speed'. We need
 			// '.rotate(rot)' for the case in which the current speed is
@@ -125,8 +123,10 @@ void PacManSystem::recieve(const Message& msg)
 			msg.id = _m_ROUND_OVER;
 			mngr_->send(msg);
 		}
+		break;
 	case _m_ROUND_START:
 		resetPacMan();
+		break;
 	default:
 		break;
 	}

@@ -37,7 +37,9 @@ void FoodSystem::update()
 
 	for (auto& e : fruits) {
 		if (mngr_->hasComponent<MiracleFruit>(e)) {
-			mngr_->getComponent<MiracleFruit>(e)->update();
+			auto miracle = mngr_->getComponent<MiracleFruit>(e);
+			assert(miracle != nullptr);
+			miracle->update();
 		}
 	}
 }
@@ -57,8 +59,11 @@ void FoodSystem::recieve(const Message& msg)
 		break;
 	case _m_ROUND_START:
 		for (auto& e : mngr_->getEntities(ecs::grp::FRUIT)) {
-			if(mngr_->hasComponent<MiracleFruit>(e))
-				mngr_->getComponent<MiracleFruit>(e)->resetTimer();
+			if (mngr_->hasComponent<MiracleFruit>(e)) {
+				auto miracle = mngr_->getComponent<MiracleFruit>(e);
+				assert(miracle != nullptr);
+				miracle->resetTimer();
+			}
 		}
 		break;
 	case _m_GAME_OVER:
@@ -86,11 +91,11 @@ void FoodSystem::generateFruits()
 		for (int j = 0; j < nFil; j++) {
 			auto fruit = mngr_->addEntity(ecs::grp::FRUIT);
 
-			auto tf = mngr_->addComponent<Transform>(fruit, 
+			mngr_->addComponent<Transform>(fruit, 
 				Vector2D((sdlutils().width() / nCol) * i + 35, (sdlutils().height() / nFil) * j + 35),
 				Vector2D(0,0), fWidth, fHeight, 0);
 
-			auto img = mngr_->addComponent<ImageWithFrames>(fruit, &sdlutils().images().at("pacman"),
+			mngr_->addComponent<ImageWithFrames>(fruit, &sdlutils().images().at("pacman"),
 				8, 8,
 				0, 0, //
 				128, 128, //

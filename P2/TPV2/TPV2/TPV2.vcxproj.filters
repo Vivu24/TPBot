@@ -135,9 +135,6 @@
     <ClInclude Include="src\ecs\Component.h">
       <Filter>Header Files\ecs</Filter>
     </ClInclude>
-    <ClInclude Include="src\ecs\messages_defs.h">
-      <Filter>Header Files\ecs</Filter>
-    </ClInclude>
     <ClInclude Include="src\systems\PacManSystem.h">
       <Filter>Header Files\systems</Filter>
     </ClInclude>
@@ -152,9 +149,6 @@
     </ClInclude>
     <ClInclude Include="src\systems\RenderSystem.h">
       <Filter>Header Files\systems</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ecs\ecs_defs.h">
-      <Filter>Header Files\ecs</Filter>
     </ClInclude>
     <ClInclude Include="src\components\ImageWithFrames.h">
       <Filter>Header Files\components</Filter>
@@ -189,14 +183,20 @@
     <ClInclude Include="src\game\NewGameState.h">
       <Filter>Header Files\game</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\ecs_defs.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\messages_defs.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
     <ClInclude Include="src\game\GameOverState.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\game</Filter>
     </ClInclude>
     <ClInclude Include="src\components\HealthComponent.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\components</Filter>
     </ClInclude>
     <ClInclude Include="src\game\PauseState.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -281,14 +281,14 @@
     <ClCompile Include="src\game\NewGameState.cpp">
       <Filter>Source Files\game</Filter>
     </ClCompile>
+    <ClCompile Include="src\game\PauseState.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
     <ClCompile Include="src\game\GameOverState.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\game</Filter>
     </ClCompile>
     <ClCompile Include="src\components\HealthComponent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game\PauseState.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\components</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

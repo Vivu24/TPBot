@@ -28,7 +28,6 @@
 // Handlers list - must have at least one element
 //
 #define _HDLRS_LIST_ \
-    BALL, \
 	PACMAN
 
 // Systems list - must have at least one element

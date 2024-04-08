@@ -7,9 +7,6 @@
   ],
   
   "images" : [
-    { "id" : "sdl_logo", "file" : "resources/images/SDL_logo.png" },
-    { "id" : "tennis_ball", "file" : "resources/images/tennis_ball.png" },
-    { "id" : "star", "file" : "resources/images/star.png"},
     { "id" : "pacman", "file" : "resources/images/pacman_sprites.png"},
     { "id" : "heart", "file" : "resources/images/heart.png"}
   ],
@@ -18,9 +15,7 @@
     { "id" : "PressAnyKey", "text" : "Press Any Key", "font" : "ARIAL24", "color" : "0x112233ff", "bg" : "0xffffffff" },
     { "id" : "PressEnter", "text" : "Press Enter", "font" : "ARIAL24", "color" : "0x112233ff", "bg" : "0xffffffff" },
     { "id" : "GameOver", "text" : "Congrats loser/winner, press enter", "font" : "ARIAL24", "color" : "0x112233ff", "bg" : "0xffffffff" },
-    { "id" : "Pause", "text" : "Paused, press Enter to continue", "font" : "ARIAL24", "color" : "0x112233ff", "bg" : "0xffffffff" },
-    { "id" : "HelloSDL", "text" : "Hello SDL!", "font" : "ARIAL48", "color" : "0x0000ffff" },
-    { "id" : "addstars", "text" : "Press SPACE to add stars to eat!", "font" : "ARIAL16", "color" : "0x00ff00ff" }
+    { "id" : "Pause", "text" : "Paused, press Enter to continue", "font" : "ARIAL24", "color" : "0x112233ff", "bg" : "0xffffffff" }
   ],
   
   "sounds" : [
@@ -32,8 +27,6 @@
   ],
 
   "musics" : [
-    { "id" : "beat", "file" : "resources/sound/beat.wav" },
-    { "id" : "imperial_march", "file" : "resources/sound/imperial_march.wav" }
   ]
 
 }

@@ -50,7 +50,7 @@ struct Message {
 		// _m_NEW_GAME
 		struct
 		{
-			// DATATATATATA
+			// DATA
 		} new_game_data;
 
 		// _m_PACMAN_FOOD_COLLISION
@@ -69,7 +69,7 @@ struct Message {
 		// _m_PAUSE
 		struct
 		{
-			// DATATATA
+			// DATA
 		} pause_data;
 	};
 };

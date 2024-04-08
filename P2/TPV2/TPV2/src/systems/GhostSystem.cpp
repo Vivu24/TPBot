@@ -34,7 +34,8 @@ void GhostSystem::update()
 	}
 
 	for (auto &g : mngr_->getEntities(ecs::grp::GHOST)) {
-		auto tf = mngr_->getComponent<Transform>(g);
+		auto tr = mngr_->getComponent<Transform>(g);
+		assert(tr != nullptr);
 
 		int rand = sdlutils().rand().nextInt(1, 1000);
 
@@ -43,11 +44,19 @@ void GhostSystem::update()
 
 			Vector2D posPM = mngr_->getComponent<Transform>(mngr_->getHandler(ecs::hdlr::PACMAN))->pos_;
 
-			tf->vel_ = (posPM - tf->pos_).normalize() * 1.1f;
+			tr->vel_ = (posPM - tr->pos_).normalize() * 1.1f;
 		}
 
-		tf->pos_ = tf->pos_ + tf->vel_;
+		tr->pos_ = tr->pos_ + tr->vel_;
 
+		if ((tr->pos_.getX() <= 0 && tr->vel_.getX() < -0.01) ||
+			(tr->pos_.getX() >= (sdlutils().width() - tr->width_) && tr->vel_.getX() > 0.01)) {
+			tr->vel_.setX(-tr->vel_.getX());
+		}
+		else if ((tr->pos_.getY() <= 0 && tr->vel_.getY() < -0.01) ||
+			(tr->pos_.getY() >= (sdlutils().height() - tr->height_) && tr->vel_.getY() > 0.01)) {
+			tr->vel_.setY(-tr->vel_.getY());
+		}
 	}
 }
 
@@ -81,13 +90,14 @@ void GhostSystem::addGhost()
 {	// create the ghost entity
 	//
 	auto ghost = mngr_->addEntity(ecs::grp::GHOST);
-	Transform* pmTR_ = mngr_->addComponent<Transform>(ghost);
-	Vector2D pos;
+	auto gTR = mngr_->addComponent<Transform>(ghost);
+	auto pmTR = mngr_->getComponent<Transform>(mngr_->getHandler(ecs::hdlr::PACMAN));
 
-	switch (sdlutils().rand().nextInt(0,4))
+	Vector2D pos;
+	switch (sdlutils().rand().nextInt(0, 4))
 	{
 	case 0:
-		pos = Vector2D(0, 0);
+		pos = Vector2D(-64, -64);
 		break;
 	case 1:
 		pos = Vector2D(sdlutils().width(), 0);
@@ -98,9 +108,13 @@ void GhostSystem::addGhost()
 	case 3: 
 		pos = Vector2D(0, sdlutils().width());
 		break;
+	default:
+		break;
 	}
+
 	auto s = 50.0f;
-	pmTR_->init(pos, Vector2D(), s, s, 0.0f);
+	auto vel = (pmTR->pos_ - gTR->pos_).normalize() * 1.1f;
+	gTR->init(pos, vel, s, s, 0.0f);
 	mngr_->addComponent<ImageWithFrames>(ghost, &sdlutils().images().at("pacman"),
 		8, 8,
 		0, 0, //

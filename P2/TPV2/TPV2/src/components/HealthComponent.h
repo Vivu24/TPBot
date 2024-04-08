@@ -19,8 +19,7 @@ public:
 private:
     Texture* tex_;
 
-    int iniX_;
-    int iniY_;
+    int init_;
     int lifes_;
     float scale_;
     float offset_;

@@ -5,10 +5,9 @@
 
 HealthComponent::HealthComponent(Texture* tex) :
 	tex_(tex),
-	scale_(0.5),
+	scale_(0.25),
 	offset_(tex_->width()* scale_),
-	iniX_(3),
-	iniY_(10),
+	init_(3),
 	lifes_(3)
 {
 }
@@ -21,7 +20,9 @@ void HealthComponent::render()
 {
 	Vector2D pos;
 	for (int i = 0; i < lifes_; i++) {
-		pos.set(iniX_ + (offset_ * i), iniY_);
+		pos.set(init_ + (offset_ * i), init_);
+
+		assert(tex_ != nullptr);
 		tex_->render(build_sdlrect(pos, tex_->width() * scale_, tex_->height() * scale_));
 	}
 }

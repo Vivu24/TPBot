@@ -5,8 +5,9 @@
 #include "../utils/Vector2D.h"
 #include <cassert>
 
-struct Transform: public ecs::Component {
-
+struct Transform : public ecs::Component 
+{
+public:
 	__CMPID_DECL__(ecs::cmp::TRANSFORM)
 
 	Transform() :

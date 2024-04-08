@@ -40,13 +40,17 @@ void CollisionSystem::checkCollisions()
 	for (int i = 0; i < fruits.size(); i++) {
 		auto fTR = mngr_->getComponent<Transform>(fruits[i]);
 		if (Collisions::collides(pmTR->getPos(), pmTR->getWidth(), pmTR->getHeight(), fTR->getPos(), fTR->getWidth(), fTR->getHeight())) {
-			//std::cout << "col f";
+			auto miracle = mngr_->getComponent<MiracleFruit>(fruits[i]);
 
 			sdlutils().soundEffects().at("pacman_eat").play();
 			Message msg;
 			msg.id = _m_PACMAN_FOOD_COLLISION;
-			if(mngr_->getComponent<MiracleFruit>(fruits[i]) != nullptr)
-				msg.fruit_collision_data.isMilagrosa = mngr_->getComponent<MiracleFruit>(fruits[i])->isMiracle();
+			if (miracle != nullptr) {
+				assert(miracle != nullptr);
+				msg.fruit_collision_data.isMilagrosa = miracle->isMiracle();
+			}
+			else
+				msg.fruit_collision_data.isMilagrosa = false;
 			msg.fruit_collision_data.fruitToDelete = fruits[i];
 			//tododododo
 			mngr_->send(msg);
