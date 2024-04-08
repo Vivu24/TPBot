@@ -30,6 +30,9 @@ void FoodSystem::update()
 		Message msg;
 		msg.id = _m_GAME_OVER;
 		mngr_->send(msg);
+
+		// Sonido victoria
+		sdlutils().soundEffects().at("pacman_won").play();
 	}
 
 	for (auto& e : fruits) {

@@ -80,6 +80,7 @@ void PacManSystem::update() {
 			pmTR_->vel_ = Vector2D(0, -speed).rotate(pmTR_->rot_);
 		}
 
+		sdlutils().soundEffects().at("pacman_chomp").play();
 	}
 
 	// move the pacman
@@ -104,7 +105,6 @@ void PacManSystem::update() {
 		pmTR_->pos_.setY(sdlutils().height() - pmTR_->height_);
 		pmTR_->vel_.set(0.0f, 0.0f);
 	}
-
 }
 
 void PacManSystem::recieve(const Message& msg)
@@ -113,6 +113,7 @@ void PacManSystem::recieve(const Message& msg)
 	switch (msg.id)
 	{
 	case _m_PACMAN_GHOST_COLLISION:
+		sdlutils().soundEffects().at("pacman_death").play();
 		if (health->getLifes() <= 0) {
 			Message msg;
 			msg.id = _m_GAME_OVER;

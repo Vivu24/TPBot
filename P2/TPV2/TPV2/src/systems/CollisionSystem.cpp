@@ -1,5 +1,6 @@
 #include "CollisionSystem.h"
 
+#include "../sdlutils/SDLUtils.h"
 #include "../components/Transform.h"
 #include "../ecs/Manager.h"
 #include "../ecs/Entity.h"
@@ -41,6 +42,7 @@ void CollisionSystem::checkCollisions()
 		if (Collisions::collides(pmTR->getPos(), pmTR->getWidth(), pmTR->getHeight(), fTR->getPos(), fTR->getWidth(), fTR->getHeight())) {
 			//std::cout << "col f";
 
+			sdlutils().soundEffects().at("pacman_eat").play();
 			Message msg;
 			msg.id = _m_PACMAN_FOOD_COLLISION;
 			if(mngr_->getComponent<MiracleFruit>(fruits[i]) != nullptr)

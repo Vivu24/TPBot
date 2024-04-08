@@ -12,6 +12,9 @@ NewGameState::NewGameState() :
 	float x = (sdlutils().width() - msg_->width()) / 2;
 	float y = (sdlutils().height() - msg_->height()) / 2;
 	dest_ = build_sdlrect(x, y, msg_->width(), msg_->height());
+
+	// Sonido intro juego
+	sdlutils().soundEffects().at("pacman_intro").play();
 }
 
 NewGameState::~NewGameState()

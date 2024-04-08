@@ -1,11 +1,47 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
-  Game.cpp
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\game\NewRoundState.h(4,15): warning C4099: 'SDL_Rect': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\SDL2-2.0.7\include\SDL_rect.h(64,16): message : vea la declaración de 'SDL_Rect'
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\game\NewGameState.h(5,15): warning C4099: 'SDL_Rect': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\game\NewRoundState.h(4,7): message : vea la declaración de 'SDL_Rect'
+  GameOverState.cpp
 C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\game\GameOverState.h(5,15): warning C4099: 'SDL_Rect': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\game\NewGameState.h(5,7): message : vea la declaración de 'SDL_Rect'
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\game\PauseState.h(4,15): warning C4099: 'SDL_Rect': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\game\GameOverState.h(5,7): message : vea la declaración de 'SDL_Rect'
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\SDL2-2.0.7\include\SDL_rect.h(64,16): message : vea la declaración de 'SDL_Rect'
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\game\GameOverState.cpp(12,10): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\game\GameOverState.cpp(13,10): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\game\GameOverState.cpp(14,57): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\game\GameOverState.cpp(14,41): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13): message : al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"
+          with
+          [
+              T=Texture
+          ]
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\game\GameOverState.cpp(10,6): message : vea la primera referencia a “SDLUtils::map_access_wrapper<Texture>::at” en “GameOverState::GameOverState”
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\sdlutils\SDLUtils.h(199,30): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<Texture>" que se está compilando
+  FoodSystem.cpp
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\components\Image.h(7,16): warning C4099: 'Transform': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\components\Transform.h(8,8): message : vea la declaración de 'Transform'
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\components\ImageWithFrames.h(7,16): warning C4099: 'Transform': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\components\Image.h(7,7): message : vea la declaración de 'Transform'
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\systems\FoodSystem.cpp(90,85): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\systems\FoodSystem.cpp(90,46): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\systems\FoodSystem.cpp(77,8): warning C4101: 'offsetX': variable local sin referencia
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\systems\FoodSystem.cpp(78,8): warning C4101: 'offsetY': variable local sin referencia
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13): message : al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"
+          with
+          [
+              T=SoundEffect
+          ]
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\systems\FoodSystem.cpp(35,50): message : vea la primera referencia a “SDLUtils::map_access_wrapper<SoundEffect>::at” en “FoodSystem::update”
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\sdlutils\SDLUtils.h(201,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\ecs\Manager.h(96,40): warning C4244: 'argumento': conversión de '_Ty' a 'float'; posible pérdida de datos
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\systems\FoodSystem.cpp(89,19): message : Vea la referencia a la creación de una instancia de la función plantilla "T *ecs::Manager::addComponent<Transform,Vector2D,Vector2D,int&,int&,int>(ecs::entity_t,Vector2D &&,Vector2D &&,int &,int &,int &&)" que se está compilando
+          with
+          [
+              T=Transform
+          ]
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\TPV2\src\ecs\Manager.h(96,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  GameCtrlSystem.cpp
+  Generando código...
   TPV2.vcxproj -> C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P2\TPV2\bin\TPV2Debug.exe
