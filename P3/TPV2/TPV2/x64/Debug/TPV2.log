@@ -1,0 +1,39 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1116,5): warning MSB8027: Dos o más archivos con el mismo nombre de SDLNetUtils.cpp producirán salidas en la misma ubicación. Esto puede dar lugar a un resultado de compilación incorrecto. Los archivos implicados son src\game\SDLNetUtils.cpp, src\sdlutils\SDLNetUtils.cpp.
+  Game.cpp
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\LittleWolf.h(240,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\LittleWolf.h(240,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\LittleWolf.h(241,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\LittleWolf.h(241,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\LittleWolf.h(267,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\LittleWolf.h(267,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\LittleWolf.h(275,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\LittleWolf.h(275,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
+  Networking.cpp
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\LittleWolf.h(240,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\LittleWolf.h(240,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\LittleWolf.h(241,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\LittleWolf.h(241,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\LittleWolf.h(267,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\LittleWolf.h(267,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\LittleWolf.h(275,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\LittleWolf.h(275,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\Networking.cpp(147,22): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\Networking.cpp(161,8): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\Networking.cpp(162,8): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\Networking.cpp(214,8): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\Networking.cpp(215,8): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\sdlutils\SDLNetUtils.h(578,16): warning C4244: '=': conversión de '__int64' a 'int'; posible pérdida de datos
+C:\Users\Javi\Downloads\TPV2\TPV2\src\sdlutils\SDLNetUtils.h(586,10): message : Vea la referencia a la creación de una instancia de la función plantilla "int SDLNetUtils::serializedSend<T>(T &,UDPpacket *,UDPsocket)" que se está compilando
+          with
+          [
+              T=Msg
+          ]
+C:\Users\Javi\Downloads\TPV2\TPV2\src\game\Networking.cpp(52,15): message : Vea la referencia a la creación de una instancia de la función plantilla "int SDLNetUtils::serializedSend<Msg>(T &,UDPpacket *,UDPsocket,const IPaddress &)" que se está compilando
+          with
+          [
+              T=Msg
+          ]
+  main.cpp
+  Generando código...
+  TPV2.vcxproj -> C:\Users\Javi\Downloads\TPV2\bin\TPV2Debug.exe
