@@ -132,6 +132,25 @@ public:
 	// update the world, tec
 	void update();
 
+	// removePlayer
+	void removePlayer(Uint8 id);
+
+	// sendInfo
+	void sendinfo();
+
+	// updatePlayerInfo
+	void update_player_info(int playerID,
+		float posX,
+		float posY,
+		float velX,
+		float velY,
+		float speed,
+		float acceleration,
+		float theta,
+		PlayerState state);
+
+	void player_shoot(Uint8 id);
+
 private:
 
 	// Calculates wall size using the <corrected> ray to the wall.

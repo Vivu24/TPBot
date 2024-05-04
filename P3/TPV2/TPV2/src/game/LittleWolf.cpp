@@ -9,6 +9,8 @@
 
 #include "../sdlutils/SDLUtils.h"
 #include "../sdlutils/Texture.h"
+#include "Game.h"
+#include "Networking.h"
 
 LittleWolf::LittleWolf(uint16_t xres, uint16_t yres, SDL_Window *window,
 		SDL_Renderer *render) :
@@ -43,6 +45,91 @@ void LittleWolf::update() {
 	spin(p);  // handle spinning
 	move(p);  // handle moving
 	shoot(p); // handle shooting
+}
+
+void LittleWolf::removePlayer(Uint8 id)
+{
+	Player& player = players_[id];
+
+	map_.walling[(int)player.where.y][(int)player.where.x] = 0;
+
+	player.state = NOT_USED;
+}
+
+void LittleWolf::sendinfo()
+{
+	Player& player = players_[player_id_];
+
+	Game::instance()->get_networking().send_my_info(Vector2D(player.where.x, player.where.y), 
+													Vector2D(player.velocity.x, player.velocity.y),
+													player.speed, 
+													player.acceleration, 
+													player.theta, 
+													player.state);
+}
+
+void LittleWolf::update_player_info(int playerID, float posX, float posY, float velX, float velY, float speed, float acceleration, float theta, PlayerState state)
+{
+	if (players_[playerID].state == NOT_USED) {
+		Player player = {playerID, 
+					viewport(0.8f),            
+					{ posX + 0.5f, posY + 0.5f }, 
+					{ velX,velY }, 			
+					speed, 			            
+					acceleration,		            	
+					theta, 			       
+					ALIVE};
+
+		map_.walling[(int)player.where.y][(int)player.where.x] = player_to_tile(playerID);
+		players_[playerID] = player;
+	}
+	else {
+		Player& player = players_[playerID];
+
+		bool collision = false;
+		// if master
+		if (Game::instance()->get_networking().is_master()) {
+			Point lastPos = player.where;
+
+			// if collision
+			if (tile(player.where, map_.walling) != player_to_tile(playerID)
+				&& tile(player.where, map_.walling) != 0) {
+
+				player.where = lastPos;
+				player.velocity = {0, 0};
+
+				collision = true;
+			}
+		}
+
+		if (collision) {
+			//send_syncro_info();
+		}
+		else {
+			map_.walling[(int)player.where.y][(int)player.where.x] = 0;
+
+			// move
+
+			player.where.x = posX;
+			player.where.y = posY;
+
+			player.velocity.x = velX;
+			player.velocity.y = velY;
+
+			player.speed = speed;
+			player.acceleration = acceleration;
+			player.theta = theta;
+			player.state = state;
+
+			map_.walling[(int)player.where.y][(int)player.where.x] = player_to_tile(playerID);
+		}
+	}
+
+}
+
+void LittleWolf::player_shoot(Uint8 id)
+{
+	shoot(players_[id]);
 }
 
 void LittleWolf::load(std::string filename) {

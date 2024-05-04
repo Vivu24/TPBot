@@ -162,4 +162,7 @@
       <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\config\littlewolf.resources.json" />
+  </ItemGroup>
 </Project>

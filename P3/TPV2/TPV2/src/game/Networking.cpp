@@ -145,11 +145,11 @@ void Networking::update() {
 
 void Networking::handle_new_client(Uint8 id) {
 	if (id != clientId_);
-		//Game::instance()->get_fighters().send_my_info();
+		Game::instance()->get_littlewolf().sendinfo();
 }
 
 void Networking::handle_disconnet(Uint8 id) {
-	//Game::instance()->get_fighters().removePlayer(id);
+	Game::instance()->get_littlewolf().removePlayer(id);
 }
 
 void Networking::send_state(const Vector2D &pos, float w, float h, float rot) {
@@ -188,9 +188,10 @@ void Networking::send_shoot(Vector2D p, Vector2D v, int width, int height,
 }
 
 void Networking::handle_shoot(const ShootMsg &m) {
-	/*Game::instance()->get_littlewolf().shoot(Vector2D(m.x, m.y),
-			Vector2D(m.vx, m.vy), m.w, m.h, m.rot);*/
-
+	// El master procesa el disparo
+	if (is_master()) {
+		Game::instance()->get_littlewolf().player_shoot(m._client_id);
+	}
 }
 
 void Networking::send_dead(Uint8 id) {
@@ -204,15 +205,21 @@ void Networking::handle_dead(const MsgWithId &m) {
 	//Game::instance()->get_littlewolf().killPlayer(m._client_id);
 }
 
-void Networking::send_my_info(const Vector2D &pos, float w, float h, float rot,
+void Networking::send_my_info(const Vector2D& pos,
+		const Vector2D& vel,
+		float s,
+		float a,
+		float rot,
 		Uint8 state) {
 	PlayerInfoMsg m;
 	m._type = _PLAYER_INFO;
 	m._client_id = clientId_;
-	m.x = pos.getX();
-	m.y = pos.getY();
-	m.w = w;
-	m.h = h;
+	m.pos_x = pos.getX();
+	m.pos_y = pos.getY();
+	m.vel_x = vel.getX();
+	m.vel_y = vel.getY();
+	m.speed = s;
+	m.a = a;
 	m.rot = rot;
 	m.state = state;
 	SDLNetUtils::serializedSend(m, p_, sock_, srvadd_);
@@ -220,8 +227,8 @@ void Networking::send_my_info(const Vector2D &pos, float w, float h, float rot,
 
 void Networking::handle_player_info(const PlayerInfoMsg &m) {
 	if (m._client_id != clientId_) {
-		/*Game::instance()->get_littlewolf().update_player_info(m._client_id, m.x,
-				m.y, m.w, m.h, m.rot, m.state);*/
+		Game::instance()->get_littlewolf().update_player_info(m._client_id, m.x,
+				m.y, m.w, m.h, m.rot, m.state);
 	}
 }
 
