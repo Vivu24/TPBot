@@ -32,9 +32,10 @@ public:
 			float rot,
 			Uint8 state);
 	
-	void send_shoot(Vector2D p, Vector2D v, int width, int height, float r);
+	void send_shoot();
 	void send_dead(Uint8 id);
 	void send_restart();
+	void send_waiting();
 
 private:
 
@@ -45,6 +46,7 @@ private:
 	void handle_shoot(const ShootMsg &m);
 	void handle_dead(const MsgWithId &m);
 	void handle_restart();
+	void handle_waiting();
 
 	UDPsocket sock_;
 	SDLNet_SocketSet socketSet_;

@@ -137,6 +137,9 @@ void Networking::update() {
 			handle_restart();
 			break;
 
+		case _WAITING:
+			handle_waiting();
+			break;
 		default:
 			break;
 		}
@@ -172,18 +175,10 @@ void Networking::handle_player_state(const PlayerStateMsg &m) {
 	}
 }
 
-void Networking::send_shoot(Vector2D p, Vector2D v, int width, int height,
-		float r) {
+void Networking::send_shoot() {
 	ShootMsg m;
 	m._type = _SHOOT;
 	m._client_id = clientId_;
-	m.x = p.getX();
-	m.y = p.getY();
-	m.vx = v.getX();
-	m.vy = v.getY();
-	m.w = width;
-	m.h = height;
-	m.rot = r;
 	SDLNetUtils::serializedSend(m, p_, sock_, srvadd_);
 }
 
@@ -202,7 +197,9 @@ void Networking::send_dead(Uint8 id) {
 }
 
 void Networking::handle_dead(const MsgWithId &m) {
-	//Game::instance()->get_littlewolf().killPlayer(m._client_id);
+	if (m._client_id != clientId_) {
+		Game::instance()->get_littlewolf().player_die(m._client_id);
+	}
 }
 
 void Networking::send_my_info(const Vector2D& pos,
@@ -227,8 +224,8 @@ void Networking::send_my_info(const Vector2D& pos,
 
 void Networking::handle_player_info(const PlayerInfoMsg &m) {
 	if (m._client_id != clientId_) {
-		Game::instance()->get_littlewolf().update_player_info(m._client_id, m.x,
-				m.y, m.w, m.h, m.rot, m.state);
+		Game::instance()->get_littlewolf().update_player_info(m._client_id, m.pos_x,
+				m.pos_y, m.vel_x, m.vel_y, m.speed, m.a, m.rot, (LittleWolf::PlayerState)m.state);
 	}
 }
 
@@ -238,7 +235,19 @@ void Networking::send_restart() {
 	SDLNetUtils::serializedSend(m, p_, sock_, srvadd_);
 }
 
+void Networking::send_waiting()
+{
+	Msg m;
+	m._type = _WAITING;
+	SDLNetUtils::serializedSend(m, p_, sock_, srvadd_);
+}
+
 void Networking::handle_restart() {
 	Game::instance()->get_littlewolf().bringAllToLife();
 
+}
+
+void Networking::handle_waiting()
+{
+	Game::instance()->get_littlewolf().waiting();
 }

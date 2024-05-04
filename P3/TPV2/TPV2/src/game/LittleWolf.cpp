@@ -68,6 +68,26 @@ void LittleWolf::sendinfo()
 													player.state);
 }
 
+void LittleWolf::send_shoot()
+{
+	Game::instance()->get_networking().send_shoot();
+}
+
+void LittleWolf::send_die(Uint8 id)
+{
+	Game::instance()->get_networking().send_dead(id);
+}
+
+void LittleWolf::send_waiting()
+{
+	Game::instance()->get_networking().send_waiting();
+}
+
+void LittleWolf::send_restart()
+{
+	
+}
+
 void LittleWolf::update_player_info(int playerID, float posX, float posY, float velX, float velY, float speed, float acceleration, float theta, PlayerState state)
 {
 	if (players_[playerID].state == NOT_USED) {
@@ -130,6 +150,19 @@ void LittleWolf::update_player_info(int playerID, float posX, float posY, float 
 void LittleWolf::player_shoot(Uint8 id)
 {
 	shoot(players_[id]);
+}
+
+void LittleWolf::player_die(Uint8 id)
+{
+	players_[id].state = DEAD;
+}
+
+void LittleWolf::waiting()
+{
+	waiting_ = true;
+	time_ = 5000;
+
+	lastFrame_ = sdlutils().virtualTimer().currTime();
 }
 
 void LittleWolf::load(std::string filename) {
@@ -593,6 +626,8 @@ void LittleWolf::switchToNextPlayer() {
 }
 
 void LittleWolf::bringAllToLife() {
+	waiting_ = false;
+
 	// bring all dead players to life -- all stay in the same position
 	for (auto i = 0u; i < max_player; i++) {
 		if (players_[i].state == DEAD) {

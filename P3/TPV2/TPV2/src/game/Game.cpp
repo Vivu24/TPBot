@@ -39,10 +39,8 @@ bool Game::init(char* host, Uint16 port) {
 	little_wolf_->load("resources/maps/little_wolf/map_0.txt");
 
 	// add some players
-	little_wolf_->addPlayer(0);
-	little_wolf_->addPlayer(1);
-	little_wolf_->addPlayer(2);
 	little_wolf_->addPlayer(net_->client_id());
+	little_wolf_->sendinfo();
 
 	return true; 
 }
@@ -66,22 +64,6 @@ void Game::start() {
 				exit = true;
 				continue;
 			}
-
-			// ESC exists the game
-			if (ihdlr.isKeyDown(SDL_SCANCODE_R)) {
-				net_->send_restart();
-			}
-
-			// N switches to the next player view
-			if (ihdlr.isKeyDown(SDL_SCANCODE_N)) {
-				little_wolf_->switchToNextPlayer();
-			}
-
-			// R brings deads to life
-			if (ihdlr.isKeyDown(SDL_SCANCODE_R)) {
-				little_wolf_->bringAllToLife();
-			}
-
 		}
 
 		little_wolf_->update();

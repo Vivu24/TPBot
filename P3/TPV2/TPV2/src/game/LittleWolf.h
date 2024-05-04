@@ -138,6 +138,14 @@ public:
 	// sendInfo
 	void sendinfo();
 
+	void send_shoot();
+
+	void send_die(Uint8 id);
+
+	void send_waiting();
+
+	void send_restart();
+
 	// updatePlayerInfo
 	void update_player_info(int playerID,
 		float posX,
@@ -150,6 +158,10 @@ public:
 		PlayerState state);
 
 	void player_shoot(Uint8 id);
+
+	void player_die(Uint8 id);
+
+	void waiting();
 
 private:
 
@@ -386,6 +398,11 @@ private:
 
 	// the GPU structure with all the needed elements to draw the world
 	Gpu gpu_;
+
+	bool waiting_ = false;
+
+	float lastFrame_,
+		  time_ = 0;
 
 };
 
