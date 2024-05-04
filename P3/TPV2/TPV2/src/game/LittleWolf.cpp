@@ -19,7 +19,8 @@ LittleWolf::LittleWolf(uint16_t xres, uint16_t yres, SDL_Window *window,
 				std::min(walling_width, walling_height) / 2), // the shoot distance -- not that it's wrt to the walling size
 		map_(), //
 		players_(), //
-		player_id_(0) { // we start with player 0
+		player_id_(0),
+		lastFrame_() { // we start with player 0
 
 	// for some reason it is created with a rotation of 90 degrees -- must be easier to
 	// manipulate coordinates
@@ -38,13 +39,29 @@ void LittleWolf::update() {
 
 	Player &p = players_[player_id_];
 
-	// dead player don't move/spin/shoot
-	if (p.state != ALIVE)
-		return;
+	if (waiting_) {
 
-	spin(p);  // handle spinning
-	move(p);  // handle moving
-	shoot(p); // handle shooting
+		time_ -= (sdlutils().virtualTimer().currTime() - lastFrame_);
+
+		lastFrame_ = sdlutils().virtualTimer().currTime();
+
+		std::cout << (int)(time_ / 1000) << "\n";
+		if (Game::instance()->get_networking().is_master() && time_ <= 0) {
+			send_restart();
+		}
+	}
+	else {
+		// dead player don't move/spin/shoot
+		if (p.state != ALIVE)
+			return;
+
+		spin(p);  // handle spinning
+		move(p);  // handle moving
+
+		if (ih().keyDownEvent() && ih().isKeyDown(SDL_SCANCODE_SPACE))
+			send_shoot();
+	}
+	
 }
 
 void LittleWolf::removePlayer(Uint8 id)
@@ -85,7 +102,47 @@ void LittleWolf::send_waiting()
 
 void LittleWolf::send_restart()
 {
-	
+	//for (int i = 0; i < max_player; i++) {
+
+	//	if (players_[i].state == NOT_USED) continue;
+
+	//	auto& p = players_[i];
+
+	//	auto& rand = sdlutils().rand();
+
+	//	// The search for an empty cell start at a random position (orow,ocol)
+	//	uint16_t orow = rand.nextInt(0, map_.walling_height);
+	//	uint16_t ocol = rand.nextInt(0, map_.walling_width);
+
+	//	// search for an empty cell
+	//	uint16_t row = orow;
+	//	uint16_t col = (ocol + 1) % map_.walling_width;
+	//	while (!((orow == row) && (ocol == col)) && map_.walling[row][col] != 0) {
+	//		col = (col + 1) % map_.user_walling_width;
+	//		if (col == 0)
+	//			row = (row + 1) % map_.walling_height;
+	//	}
+
+
+	//	p.where.x = col + 0.5f;
+	//	p.where.y = row + 0.5f;
+
+	//	p.velocity.x = 0;
+	//	p.velocity.y = 0;
+	//	p.speed = 2.0;
+	//	p.acceleration = 0.9;
+	//	p.theta = 0;
+	//	p.state = ALIVE;
+
+
+	//	// not that player <id> is stored in the map as player_to_tile(id) -- which is id+10
+	//	map_.walling[(int)p.where.y][(int)p.where.x] = player_to_tile(i);
+
+	//	//Game::instance()->get_networking().send_syncro_info(i, Vector2D(p.where.x, p.where.y));
+
+	//}
+
+	Game::instance()->get_networking().send_restart();
 }
 
 void LittleWolf::update_player_info(int playerID, float posX, float posY, float velX, float velY, float speed, float acceleration, float theta, PlayerState state)
@@ -154,7 +211,8 @@ void LittleWolf::player_shoot(Uint8 id)
 
 void LittleWolf::player_die(Uint8 id)
 {
-	players_[id].state = DEAD;
+	std::cout << "MUELTO" << "\n";
+	players_[id].state = LittleWolf::DEAD;
 }
 
 void LittleWolf::waiting()
@@ -311,6 +369,9 @@ void LittleWolf::render() {
 
 	// render the identifiers, state, etc
 	render_players_info();
+
+	if (waiting_)
+		render_waiting();
 }
 
 LittleWolf::Hit LittleWolf::cast(const Point where, Point direction,
@@ -508,6 +569,23 @@ void LittleWolf::render_players_info() {
 	}
 }
 
+void LittleWolf::render_waiting()
+{
+	std::string waitingMsg = "The game will restart in " + std::to_string((int)(time_) / 1000) + " seconds";
+
+	Texture* info = new Texture(sdlutils().renderer(), waitingMsg,
+								sdlutils().fonts().at("ARIAL24"),
+								build_sdlcolor(color_rgba(11)));
+
+
+	SDL_Rect dest = build_sdlrect((sdlutils().width() - info->width()) / 2, 
+								(sdlutils().height() - info->height()) / 2, 
+								info->width(), 
+								info->height());
+
+	info->render(dest);
+}
+
 void LittleWolf::move(Player &p) {
 	auto &ihdrl = ih();
 
@@ -578,38 +656,43 @@ void LittleWolf::spin(Player &p) {
 }
 
 bool LittleWolf::shoot(Player &p) {
-	auto &ihdrl = ih();
+	// play gun shot sound
+	sdlutils().soundEffects().at("gunshot").play();
 
-	// Space shoot -- we use keyDownEvent to force a complete press/release for each bullet
-	if (ihdrl.keyDownEvent() && ihdrl.isKeyDown(SDL_SCANCODE_SPACE)) {
+	// we shoot in several directions, because with projection what you see is not exact
+	for (float d = -0.05; d <= 0.05; d += 0.005) {
 
-		// play gun shot sound
-		sdlutils().soundEffects().at("gunshot").play();
-
-		// we shoot in several directions, because with projection what you see is not exact
-		for (float d = -0.05; d <= 0.05; d += 0.005) {
-
-			// search which tile was hit
-			const Line camera = rotate(p.fov, p.theta + d);
-			Point direction = lerp(camera, 0.5f);
-			direction.x = direction.x / mag(direction);
-			direction.y = direction.y / mag(direction);
-			const Hit hit = cast(p.where, direction, map_.walling, false, true);
+		// search which tile was hit
+		const Line camera = rotate(p.fov, p.theta + d);
+		Point direction = lerp(camera, 0.5f);
+		direction.x = direction.x / mag(direction);
+		direction.y = direction.y / mag(direction);
+		const Hit hit = cast(p.where, direction, map_.walling, false, true);
 
 #if _DEBUG
-			printf("Shoot by player %d hit a tile with value %d! at distance %f\n", p.id, hit.tile,mag(sub(p.where, hit.where)));
+		printf("Shoot by player %d hit a tile with value %d! at distance %f\n", p.id, hit.tile,mag(sub(p.where, hit.where)));
 #endif
 
-			// if we hit a tile with a player id and the distance from that tile is smaller
-			// than shoot_distace, we mark the player as dead
-			if (hit.tile > 9 && mag(sub(p.where, hit.where)) < shoot_distace) {
-				uint8_t id = tile_to_player(hit.tile);
-				players_[id].state = DEAD;
-				sdlutils().soundEffects().at("pain").play();
-				return true;
-			}
+		// if we hit a tile with a player id and the distance from that tile is smaller
+		// than shoot_distace, we mark the player as dead
+		if (hit.tile > 9 && mag(sub(p.where, hit.where)) < shoot_distace) {
+			uint8_t id = tile_to_player(hit.tile);
+			players_[id].state = DEAD;
+			send_die(id);
+			sdlutils().soundEffects().at("pain").play();
+
+			int playersAlive = 0;
+			for (auto& p : players_)
+				if (p.state == ALIVE)
+					playersAlive++;
+
+			if (playersAlive < 2)
+				send_waiting();
+
+			return true;
 		}
 	}
+
 	return false;
 }
 
@@ -628,6 +711,7 @@ void LittleWolf::switchToNextPlayer() {
 void LittleWolf::bringAllToLife() {
 	waiting_ = false;
 
+	std::cout << "A VIVIR" << "\n";
 	// bring all dead players to life -- all stay in the same position
 	for (auto i = 0u; i < max_player; i++) {
 		if (players_[i].state == DEAD) {

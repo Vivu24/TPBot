@@ -77,3 +77,9 @@ struct ShootMsg: MsgWithId {
 	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, x,y,vx,vy,w,h,rot)
 
 };
+
+struct DieMsg : MsgWithId {
+	Uint8 playerDead;
+
+	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId,playerDead)
+};

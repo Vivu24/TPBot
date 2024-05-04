@@ -44,7 +44,7 @@ private:
 	void handle_player_state(const PlayerStateMsg &m);
 	void handle_player_info(const PlayerInfoMsg &m);
 	void handle_shoot(const ShootMsg &m);
-	void handle_dead(const MsgWithId &m);
+	void handle_dead(const DieMsg &m);
 	void handle_restart();
 	void handle_waiting();
 

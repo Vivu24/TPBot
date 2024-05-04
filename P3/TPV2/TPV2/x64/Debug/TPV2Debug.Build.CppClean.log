@@ -1,29 +1,32 @@
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\vc143.pdb
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\vc143.idb
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\vector2d.obj
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\collisions.obj
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\texture.obj
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\soundeffect.obj
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\sdlutils_demo.obj
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\sdlutils.obj
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\sdlnetutils.obj
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\main.obj
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\json_demo.obj
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\jsonvalue.obj
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\json.obj
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\udpserver.obj
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\littlewolf.obj
-c:\users\javi\downloads\tpv2\bin\tpv2debug.pdb
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\tpv2.tlog\cl.command.1.tlog
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\tpv2.tlog\cl.read.1.tlog
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\tpv2.tlog\cl.write.1.tlog
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\tpv2.tlog\link-cvtres.read.1.tlog
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\tpv2.tlog\link-cvtres.write.1.tlog
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\tpv2.tlog\link-rc.read.1.tlog
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\tpv2.tlog\link-rc.write.1.tlog
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\tpv2.tlog\link.command.1.tlog
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\tpv2.tlog\link.read.1.tlog
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\tpv2.tlog\link.read.2.tlog
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\tpv2.tlog\link.read.3.tlog
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\tpv2.tlog\link.read.4.tlog
-c:\users\javi\downloads\tpv2\tpv2\x64\debug\tpv2.tlog\link.write.1.tlog
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\vc143.pdb
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\vc143.idb
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\vector2d.obj
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\collisions.obj
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\texture.obj
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\soundeffect.obj
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\sdlutils_demo.obj
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\sdlutils.obj
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\sdlnetutils.obj
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\main.obj
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\json_demo.obj
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\jsonvalue.obj
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\json.obj
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\networking.obj
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\littlewolf.obj
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\game.obj
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\udpserver.obj
+c:\users\javi\downloads\tpv2\bin\tpv2debug.lib
+c:\users\javi\downloads\tpv2\bin\tpv2debug.exp
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\bin\tpv2debug.lib
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\bin\tpv2debug.exp
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\tpv2debug.ilk
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\bin\tpv2debug.pdb
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\bin\tpv2debug.exe
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\tpv2.tlog\cl.command.1.tlog
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\tpv2.tlog\cl.items.tlog
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\tpv2.tlog\cl.read.1.tlog
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\tpv2.tlog\cl.write.1.tlog
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\tpv2.tlog\link.command.1.tlog
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\tpv2.tlog\link.read.1.tlog
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\tpv2.tlog\link.write.1.tlog
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\tpv2.tlog\link.write.2u.tlog

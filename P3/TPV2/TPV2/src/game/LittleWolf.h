@@ -399,6 +399,8 @@ private:
 	// the GPU structure with all the needed elements to draw the world
 	Gpu gpu_;
 
+	void render_waiting();
+
 	bool waiting_ = false;
 
 	float lastFrame_,

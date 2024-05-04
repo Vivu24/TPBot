@@ -67,6 +67,7 @@ void Game::start() {
 		}
 
 		little_wolf_->update();
+		little_wolf_->sendinfo();
 		net_->update();
 
 		// the clear is not necessary since we copy the whole texture -- I guess ...

@@ -95,7 +95,7 @@ void Networking::update() {
 	MsgWithMasterId m1;
 	PlayerStateMsg m2;
 	ShootMsg m3;
-	MsgWithId m4;
+	DieMsg m4;
 	PlayerInfoMsg m5;
 
 	while (SDLNetUtils::deserializedReceive(m0, p_, sock_) > 0) {
@@ -185,20 +185,22 @@ void Networking::send_shoot() {
 void Networking::handle_shoot(const ShootMsg &m) {
 	// El master procesa el disparo
 	if (is_master()) {
+		std::cout << "BANG" << "\n";
 		Game::instance()->get_littlewolf().player_shoot(m._client_id);
 	}
 }
 
 void Networking::send_dead(Uint8 id) {
-	MsgWithId m;
+	DieMsg m;
 	m._type = _DEAD;
-	m._client_id = id;
+	m._client_id = clientId_;
+	m.playerDead = id;
 	SDLNetUtils::serializedSend(m, p_, sock_, srvadd_);
 }
 
-void Networking::handle_dead(const MsgWithId &m) {
+void Networking::handle_dead(const DieMsg &m) {
 	if (m._client_id != clientId_) {
-		Game::instance()->get_littlewolf().player_die(m._client_id);
+		Game::instance()->get_littlewolf().player_die(m.playerDead);
 	}
 }
 
