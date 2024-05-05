@@ -102,47 +102,19 @@ void LittleWolf::send_waiting()
 
 void LittleWolf::send_restart()
 {
-	//for (int i = 0; i < max_player; i++) {
-
-	//	if (players_[i].state == NOT_USED) continue;
-
-	//	auto& p = players_[i];
-
-	//	auto& rand = sdlutils().rand();
-
-	//	// The search for an empty cell start at a random position (orow,ocol)
-	//	uint16_t orow = rand.nextInt(0, map_.walling_height);
-	//	uint16_t ocol = rand.nextInt(0, map_.walling_width);
-
-	//	// search for an empty cell
-	//	uint16_t row = orow;
-	//	uint16_t col = (ocol + 1) % map_.walling_width;
-	//	while (!((orow == row) && (ocol == col)) && map_.walling[row][col] != 0) {
-	//		col = (col + 1) % map_.user_walling_width;
-	//		if (col == 0)
-	//			row = (row + 1) % map_.walling_height;
-	//	}
-
-
-	//	p.where.x = col + 0.5f;
-	//	p.where.y = row + 0.5f;
-
-	//	p.velocity.x = 0;
-	//	p.velocity.y = 0;
-	//	p.speed = 2.0;
-	//	p.acceleration = 0.9;
-	//	p.theta = 0;
-	//	p.state = ALIVE;
-
-
-	//	// not that player <id> is stored in the map as player_to_tile(id) -- which is id+10
-	//	map_.walling[(int)p.where.y][(int)p.where.x] = player_to_tile(i);
-
-	//	//Game::instance()->get_networking().send_syncro_info(i, Vector2D(p.where.x, p.where.y));
-
-	//}
-
 	Game::instance()->get_networking().send_restart();
+}
+
+void LittleWolf::send_syncronize()
+{
+	for (auto& player : players_)
+		if (player.state != NOT_USED) 
+			Game::instance()->get_networking().send_syncronize(Vector2D(player.where.x, player.where.y),
+															Vector2D(player.velocity.x, player.velocity.y),
+															player.speed,
+															player.acceleration,
+															player.theta,
+															player.state);
 }
 
 void LittleWolf::update_player_info(int playerID, float posX, float posY, float velX, float velY, float speed, float acceleration, float theta, PlayerState state)
@@ -180,7 +152,7 @@ void LittleWolf::update_player_info(int playerID, float posX, float posY, float 
 		}
 
 		if (collision) {
-			//send_syncro_info();
+			send_syncronize();
 		}
 		else {
 			map_.walling[(int)player.where.y][(int)player.where.x] = 0;
@@ -221,6 +193,71 @@ void LittleWolf::waiting()
 	time_ = 5000;
 
 	lastFrame_ = sdlutils().virtualTimer().currTime();
+}
+
+void LittleWolf::player_syncronize(Uint8 id, const Vector2D& pos)
+{
+	Player& player = players_[id];
+
+	map_.walling[(int)player.where.y][(int)player.where.x] = 0;
+
+	player.where.x = pos.getX();
+	player.where.y = pos.getY();
+
+	map_.walling[(int)player.where.y][(int)player.where.x] = player_to_tile(player.id);
+}
+
+void LittleWolf::reset_positions()
+{
+	for (auto& player : players_) {
+		assert(player.id < max_player);
+
+		if (player.state == NOT_USED)
+			return;
+
+		auto& rand = sdlutils().rand();
+
+		// The search for an empty cell start at a random position (orow,ocol)
+		uint16_t orow = rand.nextInt(0, map_.walling_height);
+		uint16_t ocol = rand.nextInt(0, map_.walling_width);
+
+		// search for an empty cell
+		uint16_t row = orow;
+		uint16_t col = (ocol + 1) % map_.walling_width;
+		while (!((orow == row) && (ocol == col)) && map_.walling[row][col] != 0) {
+			col = (col + 1) % map_.user_walling_width;
+			if (col == 0)
+				row = (row + 1) % map_.walling_height;
+		}
+
+		// handle the case where the search is failed, which in principle should never
+		// happen unless we start with map with few empty cells
+		if (row >= map_.walling_height)
+			return;
+
+		map_.walling[(int)player.where.y][(int)player.where.x] = 0;
+
+		player.where.x = col + 0.5f;
+		player.where.y = row + 0.5f;
+
+		player.velocity.x = 0;
+		player.velocity.y = 0;
+		player.speed = 2.0;
+		player.acceleration = 0.9;
+		player.theta = 0;
+		player.state = ALIVE;
+
+
+		// not that player <id> is stored in the map as player_to_tile(id) -- which is id+10
+		map_.walling[(int)player.where.y][(int)player.where.x] = player_to_tile(player.id);
+
+		Game::instance()->get_networking().send_syncronize(Vector2D(player.where.x, player.where.y),
+														Vector2D(player.velocity.x, player.velocity.y),
+														player.speed,
+														player.acceleration,
+														player.theta,
+														player.state);
+	}
 }
 
 void LittleWolf::load(std::string filename) {
@@ -710,6 +747,9 @@ void LittleWolf::switchToNextPlayer() {
 
 void LittleWolf::bringAllToLife() {
 	waiting_ = false;
+
+	if (Game::instance()->get_networking().is_master())
+		reset_positions();
 
 	std::cout << "A VIVIR" << "\n";
 	// bring all dead players to life -- all stay in the same position

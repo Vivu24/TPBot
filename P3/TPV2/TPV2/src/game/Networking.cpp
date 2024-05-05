@@ -140,6 +140,10 @@ void Networking::update() {
 		case _WAITING:
 			handle_waiting();
 			break;
+
+		case _SYNCRONIZE:
+			m5.deserialize(p_->data);
+			handle_syncronize(m5);
 		default:
 			break;
 		}
@@ -244,12 +248,39 @@ void Networking::send_waiting()
 	SDLNetUtils::serializedSend(m, p_, sock_, srvadd_);
 }
 
+void Networking::send_syncronize(const Vector2D& pos,
+	const Vector2D& vel,
+	float s,
+	float a,
+	float rot,
+	Uint8 state)
+{
+	PlayerInfoMsg m;
+	m._client_id = clientId_;
+	m._client_id = clientId_;
+	m.pos_x = pos.getX();
+	m.pos_y = pos.getY();
+	m.vel_x = vel.getX();
+	m.vel_y = vel.getY();
+	m.speed = s;
+	m.a = a;
+	m.rot = rot;
+	m.state = state;
+	m._type = _SYNCRONIZE;
+
+	SDLNetUtils::serializedSend(m, p_, sock_, srvadd_);
+}
+
 void Networking::handle_restart() {
 	Game::instance()->get_littlewolf().bringAllToLife();
-
 }
 
 void Networking::handle_waiting()
 {
 	Game::instance()->get_littlewolf().waiting();
+}
+
+void Networking::handle_syncronize(PlayerInfoMsg& m)
+{
+	Game::instance()->get_littlewolf().player_syncronize(m._client_id, Vector2D(m.pos_x, m.pos_y));
 }

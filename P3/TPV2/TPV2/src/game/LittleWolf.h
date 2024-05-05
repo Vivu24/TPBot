@@ -146,6 +146,8 @@ public:
 
 	void send_restart();
 
+	void send_syncronize();
+
 	// updatePlayerInfo
 	void update_player_info(int playerID,
 		float posX,
@@ -162,6 +164,8 @@ public:
 	void player_die(Uint8 id);
 
 	void waiting();
+
+	void player_syncronize(Uint8 id, const Vector2D& pos);
 
 private:
 
@@ -400,6 +404,8 @@ private:
 	Gpu gpu_;
 
 	void render_waiting();
+
+	void reset_positions();
 
 	bool waiting_ = false;
 
