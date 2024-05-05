@@ -45,7 +45,6 @@ void LittleWolf::update() {
 
 		lastFrame_ = sdlutils().virtualTimer().currTime();
 
-		std::cout << (int)(time_ / 1000) << "\n";
 		if (Game::instance()->get_networking().is_master() && time_ <= 0) {
 			send_restart();
 		}
@@ -108,13 +107,8 @@ void LittleWolf::send_restart()
 void LittleWolf::send_syncronize()
 {
 	for (auto& player : players_)
-		if (player.state != NOT_USED) 
-			Game::instance()->get_networking().send_syncronize(Vector2D(player.where.x, player.where.y),
-															Vector2D(player.velocity.x, player.velocity.y),
-															player.speed,
-															player.acceleration,
-															player.theta,
-															player.state);
+		if (player.state != NOT_USED)
+			Game::instance()->get_networking().send_syncronize(player.id, Vector2D(player.where.x, player.where.y));
 }
 
 void LittleWolf::update_player_info(int playerID, float posX, float posY, float velX, float velY, float speed, float acceleration, float theta, PlayerState state)
@@ -251,12 +245,7 @@ void LittleWolf::reset_positions()
 		// not that player <id> is stored in the map as player_to_tile(id) -- which is id+10
 		map_.walling[(int)player.where.y][(int)player.where.x] = player_to_tile(player.id);
 
-		Game::instance()->get_networking().send_syncronize(Vector2D(player.where.x, player.where.y),
-														Vector2D(player.velocity.x, player.velocity.y),
-														player.speed,
-														player.acceleration,
-														player.theta,
-														player.state);
+		Game::instance()->get_networking().send_syncronize(player.id, Vector2D(player.where.x, player.where.y));
 	}
 }
 

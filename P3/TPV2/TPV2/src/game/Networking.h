@@ -36,15 +36,9 @@ public:
 	void send_dead(Uint8 id);
 	void send_restart();
 	void send_waiting();
-	void send_syncronize(const Vector2D& pos,
-		const Vector2D& vel,
-		float s,
-		float a,
-		float rot,
-		Uint8 state);
+	void send_syncronize(Uint8 id, const Vector2D& pos);
 
 private:
-
 	void handle_new_client(Uint8 id);
 	void handle_disconnet(Uint8 id);
 	void handle_player_state(const PlayerStateMsg &m);

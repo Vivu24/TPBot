@@ -15,6 +15,8 @@
 
 #include "../sdlutils/InputHandler.h"
 
+class Vector2D;
+
 class LittleWolf {
 public:
 

@@ -1,48 +1,79 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1116,5): warning MSB8027: Dos o más archivos con el mismo nombre de SDLNetUtils.cpp producirán salidas en la misma ubicación. Esto puede dar lugar a un resultado de compilación incorrecto. Los archivos implicados son src\game\SDLNetUtils.cpp, src\sdlutils\SDLNetUtils.cpp.
+  Game.cpp
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(277,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(277,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(278,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(278,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(304,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(304,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(312,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(312,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
   LittleWolf.cpp
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(168,49): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(168,49): error C2143: error de sintaxis: falta ',' delante de '&'
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(275,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(275,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(276,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(276,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(302,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(302,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(310,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(310,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(277,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(277,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(278,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(278,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(304,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(304,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(312,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(312,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
 C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(18,47): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(46,50): warning C4244: '=': conversión de 'Uint32' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(123,20): warning C4838: la conversión de 'int' en 'uint8_t' requiere una conversión de restricción
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(195,49): warning C4244: '=': conversión de 'Uint32' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(198,18): error C2511: 'void LittleWolf::player_syncronize(Uint8,const Vector2D &)': la función miembro sobrecargada no se ha encontrado en 'LittleWolf'
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\Game.h(8,7): message : vea la declaración de 'LittleWolf'
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(200,19): error C2597: referencia no válida a miembro no static 'LittleWolf::players_'
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(200,19): message : vea la declaración de 'LittleWolf::players_'
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(200,19): error C3867: 'LittleWolf::players_': sintaxis no estándar; utilice '&' para crear un puntero al miembro
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(200,19): error C2568: '[': no se puede resolver la sobrecarga de funciones
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(200,17): error C2530: 'player': se deben inicializar las referencias
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(207,59): error C2352: 'LittleWolf::player_to_tile': una llamada de una función miembro no estática requiere un objeto
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(370,17): message : vea la declaración de 'LittleWolf::player_to_tile'
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(246,25): warning C4305: '=': truncamiento de 'double' a 'float'
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(450,35): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(450,21): warning C4244: 'inicializando': conversión de 'double' a 'const float'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(452,32): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(452,16): warning C4244: 'inicializando': conversión de 'float' a 'const int'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(453,32): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(453,16): warning C4244: 'inicializando': conversión de 'float' a 'const int'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(534,22): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(535,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(571,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(571,45): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(573,32): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(573,29): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(600,65): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(600,50): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(600,37): warning C4244: 'argumento': conversión de 'uint_fast16_t' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(621,21): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(620,20): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(619,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(618,69): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(700,15): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(700,45): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(117,20): warning C4838: la conversión de 'int' en 'uint8_t' requiere una conversión de restricción
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(189,49): warning C4244: '=': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(240,25): warning C4305: '=': truncamiento de 'double' a 'float'
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(439,35): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(439,21): warning C4244: 'inicializando': conversión de 'double' a 'const float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(441,32): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(441,16): warning C4244: 'inicializando': conversión de 'float' a 'const int'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(442,32): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(442,16): warning C4244: 'inicializando': conversión de 'float' a 'const int'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(523,22): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(524,23): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(560,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(560,45): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(562,32): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(562,29): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(589,65): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(589,50): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(589,37): warning C4244: 'argumento': conversión de 'uint_fast16_t' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(610,21): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(609,20): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(608,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(607,69): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(689,15): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(689,45): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13): message : al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"
+          with
+          [
+              T=SoundEffect
+          ]
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.cpp(686,46): message : vea la primera referencia a “SDLUtils::map_access_wrapper<SoundEffect>::at” en “LittleWolf::shoot”
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\sdlutils\SDLUtils.h(201,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  Networking.cpp
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(277,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(277,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(278,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(278,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(304,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(304,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(312,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\LittleWolf.h(312,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\Networking.cpp(154,22): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\Networking.cpp(168,8): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\Networking.cpp(169,8): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\sdlutils\SDLNetUtils.h(578,16): warning C4244: '=': conversión de '__int64' a 'int'; posible pérdida de datos
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\sdlutils\SDLNetUtils.h(586,10): message : Vea la referencia a la creación de una instancia de la función plantilla "int SDLNetUtils::serializedSend<T>(T &,UDPpacket *,UDPsocket)" que se está compilando
+          with
+          [
+              T=Msg
+          ]
+C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\TPV2\src\game\Networking.cpp(52,15): message : Vea la referencia a la creación de una instancia de la función plantilla "int SDLNetUtils::serializedSend<Msg>(T &,UDPpacket *,UDPsocket,const IPaddress &)" que se está compilando
+          with
+          [
+              T=Msg
+          ]
+  Generando código...
+  TPV2.vcxproj -> C:\Users\Javi\Desktop\Escritorio Temporal\TPV2\TPBot\P3\TPV2\bin\TPV2Debug.exe

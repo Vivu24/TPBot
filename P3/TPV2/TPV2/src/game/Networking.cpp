@@ -248,24 +248,12 @@ void Networking::send_waiting()
 	SDLNetUtils::serializedSend(m, p_, sock_, srvadd_);
 }
 
-void Networking::send_syncronize(const Vector2D& pos,
-	const Vector2D& vel,
-	float s,
-	float a,
-	float rot,
-	Uint8 state)
+void Networking::send_syncronize(Uint8 id, const Vector2D& pos)
 {
 	PlayerInfoMsg m;
-	m._client_id = clientId_;
-	m._client_id = clientId_;
+	m._client_id = id;
 	m.pos_x = pos.getX();
 	m.pos_y = pos.getY();
-	m.vel_x = vel.getX();
-	m.vel_y = vel.getY();
-	m.speed = s;
-	m.a = a;
-	m.rot = rot;
-	m.state = state;
 	m._type = _SYNCRONIZE;
 
 	SDLNetUtils::serializedSend(m, p_, sock_, srvadd_);
