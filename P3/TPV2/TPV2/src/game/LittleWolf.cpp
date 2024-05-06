@@ -20,7 +20,9 @@ LittleWolf::LittleWolf(uint16_t xres, uint16_t yres, SDL_Window *window,
 		map_(), //
 		players_(), //
 		player_id_(0),
-		lastFrame_() { // we start with player 0
+		lastFrame_(),
+		time_(0),
+		volume_(100) { // we start with player 0
 
 	// for some reason it is created with a rotation of 90 degrees -- must be easier to
 	// manipulate coordinates
@@ -111,6 +113,13 @@ void LittleWolf::send_syncronize()
 			Game::instance()->get_networking().send_syncronize(player.id, Vector2D(player.where.x, player.where.y));
 }
 
+void LittleWolf::send_sound(int sound)
+{
+	for (auto& player : players_) {
+		Game::instance()->get_networking().send_sound(player.id, Vector2D(players_[player_id_].where.x, players_[player_id_].where.y), sound);
+	}
+}
+
 void LittleWolf::update_player_info(int playerID, float posX, float posY, float velX, float velY, float speed, float acceleration, float theta, PlayerState state)
 {
 	if (players_[playerID].state == NOT_USED) {
@@ -199,6 +208,25 @@ void LittleWolf::player_syncronize(Uint8 id, const Vector2D& pos)
 	player.where.y = pos.getY();
 
 	map_.walling[(int)player.where.y][(int)player.where.x] = player_to_tile(player.id);
+}
+
+void LittleWolf::player_sound(Uint8 id, Vector2D v, int sound)
+{
+	Player& player = players_[id];
+	if (players_[player_id_].where.x == player.where.x &&
+		players_[player_id_].where.y == player.where.y) {
+		Vector2D myPos = Vector2D(player.where.x, player.where.y);
+		float distance = (myPos - v).magnitude();
+
+		float volume = volume_ / distance;
+
+		std::string s;
+		if (sound == 1) s = "gunshot";
+		else if (sound == 2) s = "pain";
+
+		sdlutils().soundEffects().at(s).setChannelVolume(volume, 1);
+		sdlutils().soundEffects().at(s).play(0, 1);
+	}
 }
 
 void LittleWolf::reset_positions()
@@ -684,6 +712,7 @@ void LittleWolf::spin(Player &p) {
 bool LittleWolf::shoot(Player &p) {
 	// play gun shot sound
 	sdlutils().soundEffects().at("gunshot").play();
+	send_sound(1);
 
 	// we shoot in several directions, because with projection what you see is not exact
 	for (float d = -0.05; d <= 0.05; d += 0.005) {
@@ -706,6 +735,7 @@ bool LittleWolf::shoot(Player &p) {
 			players_[id].state = DEAD;
 			send_die(id);
 			sdlutils().soundEffects().at("pain").play();
+			send_sound(2);
 
 			int playersAlive = 0;
 			for (auto& p : players_)

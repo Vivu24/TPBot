@@ -18,7 +18,8 @@ enum MsgType : Uint8 {
 	_DEAD, //
 	_RESTART,
 	_WAITING,
-	_SYNCRONIZE
+	_SYNCRONIZE,
+	_SOUND
 };
 
 struct Msg {
@@ -83,4 +84,12 @@ struct DieMsg : MsgWithId {
 	Uint8 playerDead;
 
 	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId,playerDead)
+};
+
+struct SoundMsg : MsgWithId {
+	float x;
+	float y;
+	int sound;
+
+	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, x, y, sound)
 };

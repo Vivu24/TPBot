@@ -37,6 +37,7 @@ public:
 	void send_restart();
 	void send_waiting();
 	void send_syncronize(Uint8 id, const Vector2D& pos);
+	void send_sound(Uint8 id, const Vector2D v, int sound);
 
 private:
 	void handle_new_client(Uint8 id);
@@ -48,6 +49,7 @@ private:
 	void handle_restart();
 	void handle_waiting();
 	void handle_syncronize(PlayerInfoMsg& m);
+	void handle_sound(SoundMsg& m);
 
 	UDPsocket sock_;
 	SDLNet_SocketSet socketSet_;

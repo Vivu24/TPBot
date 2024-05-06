@@ -97,6 +97,7 @@ void Networking::update() {
 	ShootMsg m3;
 	DieMsg m4;
 	PlayerInfoMsg m5;
+	SoundMsg m6;
 
 	while (SDLNetUtils::deserializedReceive(m0, p_, sock_) > 0) {
 
@@ -144,6 +145,11 @@ void Networking::update() {
 		case _SYNCRONIZE:
 			m5.deserialize(p_->data);
 			handle_syncronize(m5);
+			break;
+		case _SOUND:
+			m6.deserialize(p_->data);
+			handle_sound(m6);
+			break;
 		default:
 			break;
 		}
@@ -259,6 +265,18 @@ void Networking::send_syncronize(Uint8 id, const Vector2D& pos)
 	SDLNetUtils::serializedSend(m, p_, sock_, srvadd_);
 }
 
+void Networking::send_sound(Uint8 id, const Vector2D v, int sound)
+{
+	SoundMsg m;
+	m.x = v.getX();
+	m.y = v.getY();
+	m.sound = sound;
+	m._client_id = id;
+	m._type = _SOUND;
+
+	SDLNetUtils::serializedSend(m, p_, sock_, srvadd_);
+}
+
 void Networking::handle_restart() {
 	Game::instance()->get_littlewolf().bringAllToLife();
 }
@@ -271,4 +289,9 @@ void Networking::handle_waiting()
 void Networking::handle_syncronize(PlayerInfoMsg& m)
 {
 	Game::instance()->get_littlewolf().player_syncronize(m._client_id, Vector2D(m.pos_x, m.pos_y));
+}
+
+void Networking::handle_sound(SoundMsg& m)
+{
+	Game::instance()->get_littlewolf().player_sound(m._client_id, Vector2D(m.x, m.y), m.sound);
 }

@@ -140,16 +140,6 @@ public:
 	// sendInfo
 	void sendinfo();
 
-	void send_shoot();
-
-	void send_die(Uint8 id);
-
-	void send_waiting();
-
-	void send_restart();
-
-	void send_syncronize();
-
 	// updatePlayerInfo
 	void update_player_info(int playerID,
 		float posX,
@@ -168,6 +158,8 @@ public:
 	void waiting();
 
 	void player_syncronize(Uint8 id, const Vector2D& pos);
+
+	void player_sound(Uint8 id, const Vector2D v, int sound);
 
 private:
 
@@ -405,6 +397,18 @@ private:
 	// the GPU structure with all the needed elements to draw the world
 	Gpu gpu_;
 
+	void send_shoot();
+
+	void send_die(Uint8 id);
+
+	void send_waiting();
+
+	void send_restart();
+
+	void send_syncronize();
+
+	void send_sound(int sound);
+
 	void render_waiting();
 
 	void reset_positions();
@@ -412,7 +416,8 @@ private:
 	bool waiting_ = false;
 
 	float lastFrame_,
-		  time_ = 0;
+		  time_;
 
+	float volume_;
 };
 
