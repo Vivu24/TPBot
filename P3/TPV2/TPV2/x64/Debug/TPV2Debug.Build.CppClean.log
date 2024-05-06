@@ -11,15 +11,17 @@ c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\main
 c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\json_demo.obj
 c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\jsonvalue.obj
 c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\json.obj
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\udpserver.obj
 c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\networking.obj
 c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\littlewolf.obj
 c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\game.obj
-c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\udpserver.obj
 c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\bin\tpv2debug.lib
 c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\bin\tpv2debug.exp
-c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\bin\tpv2debug.exe
+u:\hlocal\tpbot\p3\tpv2\bin\tpv2debug.lib
+u:\hlocal\tpbot\p3\tpv2\bin\tpv2debug.exp
 c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\tpv2debug.ilk
 c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\bin\tpv2debug.pdb
+c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\bin\tpv2debug.exe
 c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\tpv2.tlog\cl.command.1.tlog
 c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\tpv2.tlog\cl.items.tlog
 c:\users\javi\desktop\escritorio temporal\tpv2\tpbot\p3\tpv2\tpv2\x64\debug\tpv2.tlog\cl.read.1.tlog

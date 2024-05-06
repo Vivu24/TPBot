@@ -11,6 +11,7 @@
 #include "../sdlutils/Texture.h"
 #include "Game.h"
 #include "Networking.h"
+#include "../utils/Vector2D.h"
 
 LittleWolf::LittleWolf(uint16_t xres, uint16_t yres, SDL_Window *window,
 		SDL_Renderer *render) :
@@ -210,7 +211,7 @@ void LittleWolf::player_syncronize(Uint8 id, const Vector2D& pos)
 	map_.walling[(int)player.where.y][(int)player.where.x] = player_to_tile(player.id);
 }
 
-void LittleWolf::player_sound(Uint8 id, Vector2D v, int sound)
+void LittleWolf::player_sound(Uint8 id, const Vector2D v, int sound)
 {
 	Player& player = players_[id];
 	if (players_[player_id_].where.x == player.where.x &&
@@ -218,7 +219,8 @@ void LittleWolf::player_sound(Uint8 id, Vector2D v, int sound)
 		Vector2D myPos = Vector2D(player.where.x, player.where.y);
 		float distance = (myPos - v).magnitude();
 
-		float volume = volume_ / distance;
+		int volume = volume_ / distance;
+		if (distance == 0) volume = volume_;
 
 		std::string s;
 		if (sound == 1) s = "gunshot";
