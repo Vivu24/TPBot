@@ -1,6 +1,7 @@
 #include "GameCtrlSystem.h"
 #include "../game/Game.h"
 #include "../ecs/Manager.h"
+#include "ImmunitySystem.h"
 
 void GameCtrlSystem::recieve(const Message& msg)
 {
@@ -20,6 +21,13 @@ void GameCtrlSystem::recieve(const Message& msg)
 		break;
 	case _m_PAUSE:
 		Game::instance()->setState(Game::State::PAUSED);
+		break;
+	case _m_IS_MIRACLE:
+		if (!mngr_->getSystem<ImmunitySystem>()->getInv()) {
+			Message msg;
+			msg.id = _m_IMMUNITY_START;
+			mngr_->send(msg);
+		}
 		break;
 	default:
 		break;

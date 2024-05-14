@@ -1,5 +1,7 @@
 #pragma once
 
+#include <SDL_stdinc.h>
+
 #include "../ecs/System.h"
 
 class GhostSystem : public ecs::System
@@ -19,7 +21,7 @@ private:
 	void deleteGhosts();
 	void addGhost();
 
-	int ghostGenerationTime;
-	int lastGenerationTime;
+	Uint32 ghostGenerationTime;
+	Uint32 lastGenerationTime;
 };
 

@@ -19,7 +19,7 @@ MiracleFruit::~MiracleFruit()
 
 void MiracleFruit::update()
 {
-	int currentTime = sdlutils().virtualTimer().currTime();
+	Uint32 currentTime = sdlutils().virtualTimer().currTime();
 	if (miracleActivated_) {
 		if (currentTime >= initialTime_ + miracleDuration_) {
 			resetTimer();

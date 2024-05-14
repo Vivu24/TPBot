@@ -1,4 +1,6 @@
 #pragma once
+#include <SDL_stdinc.h>
+
 #include "../ecs/System.h"
 class ImmunitySystem :
     public ecs::System
@@ -16,7 +18,7 @@ public:
     bool getInv() { return invulnerability_; }
 private:
     bool invulnerability_;
-    int16_t invulnerabilityTime_,
-            currentTime;
+    Uint32 invulnerabilityTime_,
+			currentTime;
 };
 

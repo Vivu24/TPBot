@@ -24,7 +24,8 @@ enum msgId : msgId_t {
 	_m_PACMAN_GHOST_COLLISION,
 	_m_IMMUNITY_START,
 	_m_IMMUNITY_END,
-	_m_PAUSE
+	_m_PAUSE,
+	_m_IS_MIRACLE
 };
 
 
@@ -56,7 +57,6 @@ struct Message {
 		// _m_PACMAN_FOOD_COLLISION
 		struct
 		{
-			bool isMilagrosa;
 			ecs::entity_t fruitToDelete;
 		} fruit_collision_data;
 
@@ -71,5 +71,11 @@ struct Message {
 		{
 			// DATA
 		} pause_data;
+
+		// _m_IS_MIRACLE
+		struct
+		{
+			bool isMiracle;
+		} miracle_data;
 	};
 };

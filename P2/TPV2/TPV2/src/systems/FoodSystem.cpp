@@ -4,11 +4,8 @@
 #include "../ecs/Entity.h"
 
 #include "../components/Transform.h"
-#include "../components/Image.h"
 #include "../components/MiracleFruit.h"
-#include "../game/Game.h"
 #include "../components/ImageWithFrames.h"
-#include "ImmunitySystem.h"
 
 FoodSystem::FoodSystem()
 {	
@@ -49,13 +46,14 @@ void FoodSystem::recieve(const Message& msg)
 	switch (msg.id) 
 	{
 	case _m_PACMAN_FOOD_COLLISION:
-		mngr_->setAlive(msg.fruit_collision_data.fruitToDelete, false);
-
-		if (msg.fruit_collision_data.isMilagrosa && !mngr_->getSystem<ImmunitySystem>()->getInv()) {
+		if (mngr_->hasComponent<MiracleFruit>(msg.fruit_collision_data.fruitToDelete) 
+			&& mngr_->getComponent<MiracleFruit>(msg.fruit_collision_data.fruitToDelete)->isMiracle()) {
 			Message msg;
-			msg.id = _m_IMMUNITY_START;
+			msg.id = _m_IS_MIRACLE;
 			mngr_->send(msg);
 		}
+		
+		mngr_->setAlive(msg.fruit_collision_data.fruitToDelete, false);
 		break;
 	case _m_ROUND_START:
 		for (auto& e : mngr_->getEntities(ecs::grp::FRUIT)) {

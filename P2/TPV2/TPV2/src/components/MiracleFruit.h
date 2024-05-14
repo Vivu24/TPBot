@@ -1,7 +1,7 @@
 #pragma once
-#include "../ecs/Component.h"
+#include <SDL_stdinc.h>
 
-#include <string>
+#include "../ecs/Component.h"
 
 class ImageWithFrames;
 
@@ -30,9 +30,9 @@ private:
 
     bool miracleActivated_;
 
-    int miracleCooldown_;
-    int miracleDuration_;
-    int initialTime_;
+    Uint32 miracleCooldown_;
+    Uint32 miracleDuration_;
+    Uint32 initialTime_;
 
     ImageWithFrames* image_;
 

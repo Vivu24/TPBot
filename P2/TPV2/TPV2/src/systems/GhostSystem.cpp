@@ -3,14 +3,13 @@
 #include "../components/ImageWithFrames.h"
 #include "../components/Transform.h"
 #include "../ecs/Manager.h"
-#include "../sdlutils/InputHandler.h"
 #include "../sdlutils/SDLUtils.h"
 #include "../ecs/Entity.h"
 #include "ImmunitySystem.h"
 
 GhostSystem::GhostSystem() :
-	lastGenerationTime(0),
-	ghostGenerationTime(5000)
+	ghostGenerationTime(5000),
+	lastGenerationTime(0)
 {
 }
 
@@ -25,8 +24,8 @@ void GhostSystem::initSystem()
 
 void GhostSystem::update()
 {
-	if (lastGenerationTime + ghostGenerationTime < sdlutils().virtualTimer().currTime() && 
-		!(mngr_->getSystem<ImmunitySystem>()->getInv() || mngr_->getEntities(ecs::grp::GHOST).size() >= 10)) {
+	if (lastGenerationTime + ghostGenerationTime < sdlutils().virtualTimer().currTime() 
+		&& !(mngr_->getSystem<ImmunitySystem>()->getInv() || mngr_->getEntities(ecs::grp::GHOST).size() >= 10)) {
 
 		lastGenerationTime = sdlutils().virtualTimer().currTime();
 

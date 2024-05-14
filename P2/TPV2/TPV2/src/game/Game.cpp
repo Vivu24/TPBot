@@ -12,7 +12,6 @@
 #include "../systems/RenderSystem.h"
 #include "../systems/FoodSystem.h"
 #include "../utils/Vector2D.h"
-#include "../utils/Collisions.h"
 #include "../systems/ImmunitySystem.h"
 
 #include "RunningState.h"

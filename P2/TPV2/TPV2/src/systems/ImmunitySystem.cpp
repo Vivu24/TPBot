@@ -20,6 +20,7 @@ void ImmunitySystem::initSystem()
 
 void ImmunitySystem::update()
 {
+	auto a = sdlutils().currRealTime();
 	if (invulnerability_ && sdlutils().currRealTime() >= currentTime + invulnerabilityTime_) {
 		invulnerability_ = false;
 		Message msg;
